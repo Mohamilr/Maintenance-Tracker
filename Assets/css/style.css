@@ -3,6 +3,8 @@
   margin: 0;
 }
 
+/*navbar style*/
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -57,9 +59,51 @@ nav{
     display: block;
 }
 
+
+/*Sign in style*/
+.form-container{
+    margin-top: 10%;
+}
+
+.sign{
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    margin-bottom: 3em;
+}
+
+.sign h1{
+    font-size: 30px;
+}
+
+.sign-input {
+    margin: 3%;
+}
+
+.input{
+    margin: 10px 0;
+    height: 30px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+}
+
+.sign-submit input{
+    padding: 10px 20px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    color: #00c4cc;
+    background-color: #ffffff;
+}
+
+
 /*footer*/
 .footer-container{
     background-color: #00c4cc;
     padding: 2em ;
     text-align: center;
 }
+
+
+
+   
+
