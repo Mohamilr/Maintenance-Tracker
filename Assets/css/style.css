@@ -95,6 +95,173 @@ nav{
     background-color: #ffffff;
 }
 
+/*contact style*/
+
+.contact-container{
+    text-align: center;
+    margin: 5em;
+}
+
+.contact-container h1{
+    font-size: 30px;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.contact-input {
+    margin: 3%;
+}
+
+.input{
+    margin: 10px 0;
+    height: 30px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+}
+
+.contact-text textarea{
+    margin-bottom: 3%;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+.contact-submit input{
+    padding: 10px 20px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    color: #00c4cc;
+    background-color: #ffffff;
+}
+
+.social-icons ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 3em;
+}
+
+.social-icons i{
+    font-size: 5em;
+}
+
+.social-icons i{
+    transition: all 2s ease-out;
+}
+
+.social-icons i:hover{
+    transform: scale(1.2);
+}
+
+/*user service style*/
+.box-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: 2em 0;
+}
+
+/*background images for .box*/
+.img-car{
+    background: url(../images/pen.jpg) no-repeat center;
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.img-laptop{
+    
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.img-phone{
+    
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.img-tv{
+    
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.img-fridge{
+    
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.img-ac{
+    
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+}
+/**/
+
+.box{
+    text-align: center;
+    border: 3px solid green;
+}
+
+
+.box textarea{
+    margin-bottom: 3%;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+}
+
+/*button*/
+button{
+    margin-bottom: 10px;
+    height: 30px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: green;
+}
+
+/*dashboard user style*/
+.head{
+    text-align: center;
+    margin: 1em 0 2em;
+}
+
+.table-container{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.table-container tbody tr{
+    border-bottom: 3px solid red;
+}
+
+.pending-req{
+    color: red;
+}
+
+.delevered-req{
+    color: green;
+}
+
+.tr-content{
+    height: 40px;
+/*    padding-bottom: 10px;*/
+    box-shadow : 10px 10px 20px rgba(0, 0, 0, 0.19);
+}
+
 
 /*footer*/
 .footer-container{
