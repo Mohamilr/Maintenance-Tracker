@@ -244,22 +244,69 @@ button{
     margin-bottom: 2em;
 }
 
-.table-container tbody tr{
-    border-bottom: 3px solid red;
-}
-
-.pending-req{
+.red-req{
     color: red;
 }
 
-.delevered-req{
+.green-req{
     color: green;
 }
 
 .tr-content{
     height: 40px;
-/*    padding-bottom: 10px;*/
-    box-shadow : 10px 10px 20px rgba(0, 0, 0, 0.19);
+    box-shadow : 0 10px 20px rgba(0, 0, 0, 0.19);
+}
+
+/*admin review page style*/
+/*styles from user dashboard .tr-content, .table-container*/
+.accept{
+     margin: 10px 0;
+     border: 2px solid green;
+     color: green;
+     background-color: white;
+}
+
+.reject{
+    margin: 10px 0;
+    border: 2px solid red;
+    color: red;
+    background-color: white;
+}
+
+.accept:active{
+    color: white;
+    background-color: green;
+}
+
+.reject:active{
+    color: white;
+    background-color: red;
+}
+
+/*admin dashboard style*/
+/*styles from user dashboard .tr-content, .table-container*/
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px;
+
+}
+
+.search-input{
+     padding: 10px 20px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    color: #00c4cc;
+    background-color: #ffffff;
+    margin: 0 20px 0;
+}
+
+.search-btn{
+    padding: 10px 20px;
+    border: 2px solid #00c4cc;
+    border-radius: 5px;
+    color: #00c4cc;
+    background-color: #ffffff;
 }
 
 
