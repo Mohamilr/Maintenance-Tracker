@@ -36,20 +36,22 @@ nav span i{
     display: inline-block;
     height: 30px;
     padding: 10px 10px 0;
-/*    color: #30c252;*/
+}
+
+.main-ul li a{
+    text-decoration: none;
 }
 
 .main-ul li:hover{
     background-color: #30c252;
 }
 
-.main-ul a:hover{
-    color: white !important;
+.main-ul li:hover a{
+    color: black;
 }
 
-.main-ul li a{
-    text-decoration: none;
-    color: #30c252;
+.main-ul a:hover{
+    color: white !important;
 }
 
 .parent-li{
@@ -61,7 +63,7 @@ nav span i{
     position: absolute;
     width: 54px;
     background-color: #30c252;
-    margin-top: 1px;
+    margin-top: 2px;
     padding-left: 0 !important;
     display: none;
 }
@@ -76,22 +78,60 @@ nav span i{
     background-color: #30c252;
 }
 
+
 .active{
     color: #24292e !important;
     background-color: #30c252;
 }
 
-.nav-icon{
-/*    display: none;*/
+.active a{
+    color: black !important;
 }
 
 /*index page style*/
+.site-bg{
+    background: url(../images/car.jpeg) no-repeat center;
+    background-size: cover;
+    height: 30em;
+    text-align: center;
+}
 
-.info-head{
-    
+.site-bg h1{
+    padding: 10%;
+    color: #30c252;
+    font-size: 5em;
+    font-family: 'Indie Flower', cursive !important;
+    transition: all 2s ease-out;
+}
+
+.index-box-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.index-box{
+    text-align: center;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+.index-sign-button{
+    margin: 2em;
+    text-align: center;
+}
+
+
+.heading{
+    margin: 1em;
+    text-align: center;
+}
+
+.list-container li{
+    text-align: center;
 }
 
 .comment{
+    margin: 2em;
     text-align: center;
 }
 
@@ -156,7 +196,6 @@ nav span i{
 }
 
 /*contact style*/
-
 .contact-container{
     text-align: center;
     margin: 5em;
