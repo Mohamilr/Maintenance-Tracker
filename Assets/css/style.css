@@ -1,19 +1,31 @@
 *{
   padding: 0;
   margin: 0;
+  font-family: 'Cardo', serif;
+}
+
+a{
+    color: #30c252;
 }
 
 /*navbar style*/
-
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: red;
+    background-color: #24292e;
 }
 
 .brand{
-    padding: 10px 5px;
-    color: white;
+    padding:  3px 0 0;
+    color: #30c252;
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive !important;
+}
+
+nav span i{
+    padding-left: 10px;
+    font-size: 30px;
+    color: #30c252;
 }
 
 .main-ul{
@@ -24,18 +36,20 @@ nav{
     display: inline-block;
     height: 30px;
     padding: 10px 10px 0;
+/*    color: #30c252;*/
 }
 
 .main-ul li:hover{
-    background-color: green;
+    background-color: #30c252;
 }
 
 .main-ul a:hover{
-    color: white;
+    color: white !important;
 }
 
 .main-ul li a{
     text-decoration: none;
+    color: #30c252;
 }
 
 .parent-li{
@@ -45,24 +59,61 @@ nav{
 
 .sub-ul li{
     position: absolute;
-    width: 52px;
-}
-
-.sub-ul li{
-    background-color: blue;
-    margin-top: 10px;
+    width: 54px;
+    background-color: #30c252;
+    margin-top: 1px;
     padding-left: 0 !important;
     display: none;
 }
 
-.parent-li:hover .sub-ul li{
-    display: block;
+.sub-ul li a{
+    color: #24292e;
 }
 
+.parent-li:hover .sub-ul li{
+    display: block;
+    color: black;
+    background-color: #30c252;
+}
+
+.active{
+    color: #24292e !important;
+    background-color: #30c252;
+}
+
+.nav-icon{
+/*    display: none;*/
+}
+
+/*index page style*/
+
+.info-head{
+    
+}
+
+.comment{
+    text-align: center;
+}
+
+.comment p{
+    font-size: 20px;
+    font-family: 'Poiret One', cursive !important;
+}
+
+.ceo{
+    margin: 3em;
+    text-align: center;
+}
+
+.ceo img{
+    height: 300px;
+    border: 5px solid #30c252; 
+    border-radius: 100%; 
+}
 
 /*Sign in style*/
 .form-container{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .sign{
@@ -77,22 +128,31 @@ nav{
 }
 
 .sign-input {
-    margin: 3%;
+    margin: 1em;
 }
 
 .input{
-    margin: 10px 0;
-    height: 30px;
-    border: 2px solid #00c4cc;
+    font-size: 15px;
+    height: 3em !important;
+    width: 15em;
+    border: 2px solid #30c252;
     border-radius: 5px;
 }
 
-.sign-submit input{
+#submit{
     padding: 10px 20px;
-    border: 2px solid #00c4cc;
+    border: 2px solid #30c252;
     border-radius: 5px;
-    color: #00c4cc;
+    color: #30c252;
     background-color: #ffffff;
+    width: 17em;
+    margin-bottom: 20px;
+}
+
+.site-icon-sign{
+   align-content: center;
+   font-size: 5em; 
+   color: #30c252;
 }
 
 /*contact style*/
@@ -116,16 +176,9 @@ nav{
     margin: 3%;
 }
 
-.input{
-    margin: 10px 0;
-    height: 30px;
-    border: 2px solid #00c4cc;
-    border-radius: 5px;
-}
-
 .contact-text textarea{
     margin-bottom: 3%;
-    border: 2px solid #00c4cc;
+    border: 2px solid #30c252;
     border-radius: 5px;
     font-size: 15px;
 }
@@ -133,9 +186,9 @@ nav{
 
 .contact-submit input{
     padding: 10px 20px;
-    border: 2px solid #00c4cc;
+    border: 2px solid #30c252;
     border-radius: 5px;
-    color: #00c4cc;
+    color: #30c252;
     background-color: #ffffff;
 }
 
@@ -168,57 +221,71 @@ nav{
 
 /*background images for .box*/
 .img-car{
-    background: url(../images/pen.jpg) no-repeat center;
-    height: 100px;
+    background: url(../images/car.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
 }
 
 .img-laptop{
-    
-    height: 100px;
+    background: url(../images/laptop.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
 }
 
 .img-phone{
-    
-    height: 100px;
+    background: url(../images/phone.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
 }
 
 .img-tv{
-    
-    height: 100px;
+    background: url(../images/tv.jpg) no-repeat center;
+    background-size: cover;    
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
 }
 
 .img-fridge{
-    
-    height: 100px;
+    background: url(../images/fridge.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
 }
 
 .img-ac{
-    
-    height: 100px;
+    background: url(../images/ac.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
     text-align: center;
-    padding-top: 50px;
+}
+
+.img-microwave{
+    background: url(../images/microwave.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-washingmachine{
+    background: url(../images/washing%20machine.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
 }
 /**/
 
 .box{
     text-align: center;
-    border: 3px solid green;
+    box-shadow: 1px 1px 2px #aaa;
 }
 
 
 .box textarea{
-    margin-bottom: 3%;
-    border: 2px solid #00c4cc;
+    margin: 2em 0;
+    border: 2px solid #30c252;
     border-radius: 5px;
 }
 
@@ -226,10 +293,11 @@ nav{
 button{
     margin-bottom: 10px;
     height: 30px;
-    border: 2px solid #00c4cc;
+    border: 2px solid #30c252;
+    color: #30c252;
     border-radius: 5px;
     padding: 0 10px;
-    background-color: green;
+    background-color: white;
 }
 
 /*dashboard user style*/
@@ -254,11 +322,34 @@ button{
 
 .tr-content{
     height: 40px;
-    box-shadow : 0 10px 20px rgba(0, 0, 0, 0.19);
+    box-shadow: 1px 1px 2px #aaa;
 }
 
 /*admin review page style*/
 /*styles from user dashboard .tr-content, .table-container*/
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px;
+}
+
+.search-input{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    color: #00c4cc;
+    background-color: #ffffff;
+    margin: 0 20px 0;
+}
+
+.search-btn{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    color: #30c252;
+    background-color: #ffffff;
+}
+
 .accept{
      margin: 10px 0;
      border: 2px solid green;
@@ -285,39 +376,13 @@ button{
 
 /*admin dashboard style*/
 /*styles from user dashboard .tr-content, .table-container*/
-.search-container{
-    display: flex;
-    justify-content: center;
-    margin: 0 0 20px;
-
-}
-
-.search-input{
-     padding: 10px 20px;
-    border: 2px solid #00c4cc;
-    border-radius: 5px;
-    color: #00c4cc;
-    background-color: #ffffff;
-    margin: 0 20px 0;
-}
-
-.search-btn{
-    padding: 10px 20px;
-    border: 2px solid #00c4cc;
-    border-radius: 5px;
-    color: #00c4cc;
-    background-color: #ffffff;
-}
-
+/*style from review .search-container .search input .search-btn*/
 
 /*footer*/
 .footer-container{
-    background-color: #00c4cc;
+    color: #30c252;
+    background-color: #24292e;
     padding: 2em ;
     text-align: center;
 }
-
-
-
-   
 
