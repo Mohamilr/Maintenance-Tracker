@@ -161,6 +161,7 @@ nav span i{
     flex-direction: column;
     text-align: center; 
     margin-bottom: 3em;
+    height: 80vh;
 }
 
 .sign h1{
@@ -177,6 +178,7 @@ nav span i{
     width: 15em;
     border: 2px solid #30c252;
     border-radius: 5px;
+    padding-left: 8px; 
 }
 
 #submit{
@@ -258,6 +260,11 @@ nav span i{
     margin: 2em 0;
 }
 
+.box{
+    text-align: center;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
 /*background images for .box*/
 .img-car{
     background: url(../images/car.jpeg) no-repeat center;
@@ -316,12 +323,6 @@ nav span i{
 }
 /**/
 
-.box{
-    text-align: center;
-    box-shadow: 1px 1px 2px #aaa;
-}
-
-
 .box textarea{
     margin: 2em 0;
     border: 2px solid #30c252;
@@ -376,7 +377,6 @@ button{
     padding: 10px 20px;
     border: 2px solid #30c252;
     border-radius: 5px;
-    color: #00c4cc;
     background-color: #ffffff;
     margin: 0 20px 0;
 }
@@ -425,3 +425,124 @@ button{
     text-align: center;
 }
 
+.main-ul .icon{
+    display: none;
+}
+
+/* media query */
+@media only screen and (max-width: 720px) {
+    /* navbar style */
+    nav{
+        width: 100%;
+    }
+
+      /*  */
+/* 
+      .main-ul:not(:first-child){
+        display: none;
+    }
+
+    .main-ul .icon{
+        float: right;
+        display: block;
+    } */
+
+    /* index page style */
+    .site-bg{
+        height: 15em;
+    }
+
+    .site-bg h1{
+        font-size: 3em;
+    }
+
+    .index-box-container{
+        display: flex;
+        flex-direction: column;
+        margin: 2em;
+    }
+
+    .index-box{
+        margin-bottom: 2em;
+        height: 10em;
+    }
+
+    .index-box h3{
+        margin: 1em;
+    }
+
+    .list-container li{
+        margin: 1em; 
+        list-style: none;
+    }
+
+    /*Sign in style*/
+    .sign{
+        margin-bottom: 1em;
+        height: 50vh;
+    }
+    
+    /* contact style */
+
+    .contact-container{
+        text-align: center;
+        margin: 3em;
+    }
+    
+    .social-icons ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+    }
+    
+    .social-icons i{
+        padding-bottom: 0.5em;
+        font-size: 5em;
+    }
+    
+    .contact-container h1{
+        font-size: 30px;
+        text-align: center;
+        margin: 35px;
+    }
+    
+    .contact-text textarea{
+        padding-left: 5px;
+        width: 100%;
+    }
+
+    /* user service style */
+    .box-container{
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+    
+    .box{
+        text-align: center;
+        box-shadow: 1px 1px 2px #aaa;
+        margin: 0 0 2em;
+    }
+
+    /* admin review page*/
+    .search-btn{
+        margin-right: 1em; 
+    }
+
+    .accept{
+        display: none;
+    }
+
+    .reject{
+        display: none;
+    }
+
+    .table-container tbody .tr-content:hover .accept{
+        display: block;
+    }
+
+    .table-container tbody .tr-content:hover .reject{
+        display: block;
+    }  
+}
