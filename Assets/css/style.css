@@ -161,6 +161,553 @@ nav span i{
     flex-direction: column;
     text-align: center; 
     margin-bottom: 3em;
+    height: 80vh;
+}
+
+.sign h1{
+    font-size: 30px;
+}
+
+.sign-input {
+    margin: 1em;
+}
+
+.input{
+    font-size: 15px;
+    height: 3em !important;
+    width: 15em;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    padding-left: 8px; 
+}
+
+#submit{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    color: #30c252;
+    background-color: #ffffff;
+    width: 17em;
+    margin-bottom: 20px;
+}
+
+.site-icon-sign{
+   align-content: center;
+   font-size: 5em; 
+   color: #30c252;
+}
+
+/*contact style*/
+.contact-container{
+    text-align: center;
+    margin: 5em;
+}
+
+.contact-container h1{
+    font-size: 30px;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.contact-input {
+    margin: 3%;
+}
+
+.contact-text textarea{
+    margin-bottom: 3%;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+.contact-submit input{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    color: #30c252;
+    background-color: #ffffff;
+}
+
+.social-icons ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 3em;
+}
+
+.social-icons i{
+    font-size: 5em;
+}
+
+.social-icons i{
+    transition: all 2s ease-out;
+}
+
+.social-icons i:hover{
+    transform: scale(1.2);
+}
+
+/*user service style*/
+.box-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: 2em 0;
+}
+
+.box{
+    text-align: center;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+/*background images for .box*/
+.img-car{
+    background: url(../images/car.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-laptop{
+    background: url(../images/laptop.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-phone{
+    background: url(../images/phone.jpeg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-tv{
+    background: url(../images/tv.jpg) no-repeat center;
+    background-size: cover;    
+    height: 10em;
+    text-align: center;
+}
+
+.img-fridge{
+    background: url(../images/fridge.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-ac{
+    background: url(../images/ac.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-microwave{
+    background: url(../images/microwave.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+
+.img-washingmachine{
+    background: url(../images/washing%20machine.jpg) no-repeat center;
+    background-size: cover;
+    height: 10em;
+    text-align: center;
+}
+/**/
+
+.box textarea{
+    margin: 2em 0;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+}
+
+/*button*/
+button{
+    margin-bottom: 10px;
+    height: 30px;
+    border: 2px solid #30c252;
+    color: #30c252;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+/*dashboard user style*/
+.head{
+    text-align: center;
+    margin: 1em 0 2em;
+}
+
+.table-container{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.red-req{
+    color: red;
+}
+
+.green-req{
+    color: green;
+}
+
+.tr-content{
+    height: 40px;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+/*admin review page style*/
+/*styles from user dashboard .tr-content, .table-container*/
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px;
+}
+
+.search-input{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 0 20px 0;
+}
+
+.search-btn{
+    padding: 10px 20px;
+    border: 2px solid #30c252;
+    border-radius: 5px;
+    color: #30c252;
+    background-color: #ffffff;
+}
+
+.accept{
+     margin: 10px 0;
+     border: 2px solid green;
+     color: green;
+     background-color: white;
+}
+
+.reject{
+    margin: 10px 0;
+    border: 2px solid red;
+    color: red;
+    background-color: white;
+}
+
+.accept:active{
+    color: white;
+    background-color: green;
+}
+
+.reject:active{
+    color: white;
+    background-color: red;
+}
+
+/*admin dashboard style*/
+/*styles from user dashboard .tr-content, .table-container*/
+/*style from review .search-container .search input .search-btn*/
+
+/*footer*/
+.footer-container{
+    color: #30c252;
+    background-color: #24292e;
+    padding: 2em ;
+    text-align: center;
+}
+
+.main-ul .icon{
+    display: none;
+}
+
+/* media query */
+@media only screen and (max-width: 720px) {
+    /* navbar style */
+    nav{
+        width: 100%;
+    }
+
+      /*  */
+/* 
+      .main-ul:not(:first-child){
+        display: none;
+    }
+
+    .main-ul .icon{
+        float: right;
+        display: block;
+    } */
+
+    /* index page style */
+    .site-bg{
+        height: 15em;
+    }
+
+    .site-bg h1{
+        font-size: 3em;
+    }
+
+    .index-box-container{
+        display: flex;
+        flex-direction: column;
+        margin: 2em;
+    }
+
+    .index-box{
+        margin-bottom: 2em;
+        height: 10em;
+    }
+
+    .index-box h3{
+        margin: 1em;
+    }
+
+    .list-container li{
+        margin: 1em; 
+        list-style: none;
+    }
+
+    /*Sign in style*/
+    .sign{
+        margin-bottom: 1em;
+        height: 50vh;
+    }
+    
+    /* contact style */
+
+    .contact-container{
+        text-align: center;
+        margin: 3em;
+    }
+    
+    .social-icons ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+    }
+    
+    .social-icons i{
+        padding-bottom: 0.5em;
+        font-size: 5em;
+    }
+    
+    .contact-container h1{
+        font-size: 30px;
+        text-align: center;
+        margin: 35px;
+    }
+    
+    .contact-text textarea{
+        padding-left: 5px;
+        width: 100%;
+    }
+
+    /* user service style */
+    .box-container{
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+    
+    .box{
+        text-align: center;
+        box-shadow: 1px 1px 2px #aaa;
+        margin: 0 0 2em;
+    }
+
+    /* admin review page*/
+    .search-btn{
+        margin-right: 1em; 
+    }
+
+    .accept{
+        display: none;
+    }
+
+    .reject{
+        display: none;
+    }
+
+    .table-container tbody .tr-content:hover .accept{
+        display: block;
+    }
+
+    .table-container tbody .tr-content:hover .reject{
+        display: block;
+    }  
+}*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Cardo', serif;
+}
+
+a{
+    color: #30c252;
+}
+
+/*navbar style*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #24292e;
+}
+
+.brand{
+    padding:  3px 0 0;
+    color: #30c252;
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive !important;
+}
+
+nav span i{
+    padding-left: 10px;
+    font-size: 30px;
+    color: #30c252;
+}
+
+.main-ul{
+    position: relative;
+}
+
+.main-ul li{
+    display: inline-block;
+    height: 30px;
+    padding: 10px 10px 0;
+}
+
+.main-ul li a{
+    text-decoration: none;
+}
+
+.main-ul li:hover{
+    background-color: #30c252;
+}
+
+.main-ul li:hover a{
+    color: black;
+}
+
+.main-ul a:hover{
+    color: white !important;
+}
+
+.parent-li{
+    padding-right: 10px;
+    padding-left: 0 !important;
+}
+
+.sub-ul li{
+    position: absolute;
+    width: 54px;
+    background-color: #30c252;
+    margin-top: 2px;
+    padding-left: 0 !important;
+    display: none;
+}
+
+.sub-ul li a{
+    color: #24292e;
+}
+
+.parent-li:hover .sub-ul li{
+    display: block;
+    color: black;
+    background-color: #30c252;
+}
+
+
+.active{
+    color: #24292e !important;
+    background-color: #30c252;
+}
+
+.active a{
+    color: black !important;
+}
+
+/*index page style*/
+.site-bg{
+    background: url(../images/car.jpeg) no-repeat center;
+    background-size: cover;
+    height: 30em;
+    text-align: center;
+}
+
+.site-bg h1{
+    padding: 10%;
+    color: #30c252;
+    font-size: 5em;
+    font-family: 'Indie Flower', cursive !important;
+    transition: all 2s ease-out;
+}
+
+.index-box-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.index-box{
+    text-align: center;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+.index-sign-button{
+    margin: 2em;
+    text-align: center;
+}
+
+
+.heading{
+    margin: 1em;
+    text-align: center;
+}
+
+.list-container li{
+    text-align: center;
+}
+
+.comment{
+    margin: 2em;
+    text-align: center;
+}
+
+.comment p{
+    font-size: 20px;
+    font-family: 'Poiret One', cursive !important;
+}
+
+.ceo{
+    margin: 3em;
+    text-align: center;
+}
+
+.ceo img{
+    height: 300px;
+    border: 5px solid #30c252; 
+    border-radius: 100%; 
+}
+
+/*Sign in style*/
+.form-container{
+    margin-top: 5%;
+}
+
+.sign{
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    margin-bottom: 3em;
 }
 
 .sign h1{
