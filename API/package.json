@@ -1,10 +1,10 @@
 {
-  "name": "maintainance tracker api",
+  "name": "api",
   "version": "1.0.0",
   "description": "Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of the Api for an\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
     "eslint": "^5.16.0",
     "nodemon": "^1.19.1"
   }
