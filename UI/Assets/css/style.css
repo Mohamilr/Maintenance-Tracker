@@ -431,8 +431,7 @@ button{
     }
     
     .main-ul{
-                display: none;
-
+        display: none;
     }
     
     .nav-toggle{
@@ -449,18 +448,6 @@ button{
     .fa-bars{
         display: block !important;
     }
-  
-
-      /*  */
-/* 
-      .main-ul:not(:first-child){
-        display: none;
-    }
-
-    .main-ul .icon{
-        float: right;
-        display: block;
-    } */
 
     /* index page style */
     .site-bg{
