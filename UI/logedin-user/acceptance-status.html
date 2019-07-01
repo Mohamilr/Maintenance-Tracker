@@ -8,7 +8,7 @@
     <title>FIX IT</title>
     <link rel="stylesheet" href="../Assets/css/style.css">
     <!--    favicon-->
-   <link rel="icon" type="image/x-icon" href="../Assets/images/fav2.jpg">
+    <link rel="icon" type="image/x-icon" href="../Assets/images/fav2.jpg">
     <!--    font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -19,134 +19,122 @@
 <body>
     <header>
         <nav>
-            <span class="brand"><i class="fas fa-tools"></i>FIX IT</span>
+            <span class="brand"><i class="fas fa-tools"></i><a href="./dashboard.html">FIX IT</a></span>
             <ul class="main-ul">
-                <!--                <li><a href="">Username</a></li>-->
-                <li><a href="./dashboard-admin.html">Dashboard</a></li>
-                <li class="active"><a href="./review.html">Service review</a></li>
+                <li><a href="">Username</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./service.html">Service</a></li>
+                <li class="active"><a href="./acceptance-status.html">Acceptance status</a></li>
+                <li><a href="../sign-in.html">Log out</a></li>
             </ul>
+            <i class="fas fa-bars" id="bar"></i>
         </nav>
     </header>
     <main>
         <section>
-            <h1 class="head">New Requests</h1>
-            <!--               filter-->
-            <div class="search-container">
-                <input type="text" placeholder="search by faulty item" class="search-input">
-                <input type="button" value="search" class="search-btn">
-            </div>
-            <table class="table-container">
-                <thead>
-                    <tr>
-                        <th>Client</th>
-                        <th>Faulty Item</th>
-                        <th>Item Type</th>
-                        <th>Scheduled Date</th>
-                        <th>Complaint</th>
-                        <!--                       <th>What to do</th>-->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tr-content">
-                        <td>Person</td>
-                        <td>Car</td>
-                        <td>Benz</td>
-                        <td>20/05/2019</td>
-                        <td>lorem ipsum pocjosd</td>
-                        <td> <button class="accept">Accept</button>
-                        </td>
-                        <td><button class=" reject">Reject</button>
-                        </td>
-                    </tr>
-                    <tr class="tr-content">
-                        <td>Person</td>
-                        <td>Car</td>
-                        <td>Benz</td>
-                        <td>20/05/2019</td>
-                        <td>lorem ipsum pocjosd</td>
-                        <td> <button class="accept">Accept</button>
-                        </td>
-                        <td><button class=" reject">Reject</button>
-                        </td>
-                    </tr>
-                    <tr class="tr-content">
-                        <td>Person</td>
-                        <td>Car</td>
-                        <td>Benz</td>
-                        <td>20/05/2019</td>
-                        <td>lorem ipsum pocjosd</td>
-                        <td> <button class="accept">Accept</button>
-                        </td>
-                        <td><button class=" reject">Reject</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <h1 class="head">ACCEPTANCE STATUS</h1>
         </section>
         <section>
-            <h1 class="head">Accepted Requests</h1>
-            <!--               filter-->
-            <div class="search-container">
-                <input type="text" placeholder="search by faulty item" class="search-input">
-                <input type="button" value="search" class="search-btn">
-            </div>
             <table class="table-container">
                 <thead>
                     <tr>
-                        <th>Client</th>
                         <th>Faulty Item</th>
                         <th>Item Type</th>
                         <th>Scheduled Date</th>
                         <th>Complaint</th>
-                        <th>Status</th>
+                        <th>Acceptance status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="tr-content">
-                        <td>Person</td>
                         <td>Car</td>
                         <td>Benz</td>
                         <td>20/05/2019</td>
                         <td>lorem ipsum pocjosd</td>
-                        <td>icon</td>
-                        <td>
-                            <button class="accept">Done</button>
-                        </td>
+                        <td class="red-req">Rejected</td>
                     </tr>
                     <tr class="tr-content">
-                        <td>Person</td>
                         <td>Car</td>
                         <td>Benz</td>
                         <td>20/05/2019</td>
                         <td>lorem ipsum pocjosd</td>
-                        <td>icon</td>
-                        <td><button class="accept">Done</button>
-                        </td>
+                        <td class="green-req">Accepted</td>
                     </tr>
                     <tr class="tr-content">
-                        <td>Person</td>
                         <td>Car</td>
                         <td>Benz</td>
                         <td>20/05/2019</td>
                         <td>lorem ipsum pocjosd</td>
-                        <td>icon</td>
-                        <td><button class="accept">Done</button>
-                        </td>
+                        <td class="red-req">Rejected</td>
                     </tr>
                     <tr class="tr-content">
-                        <td>Person</td>
                         <td>Car</td>
                         <td>Benz</td>
                         <td>20/05/2019</td>
                         <td>lorem ipsum pocjosd</td>
-                        <td>icon</td>
-                        <td><button class="accept">Done</button>
-                        </td>
+                        <td class="green-req">Accepted</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="green-req">Accepted</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="green-req">Accepted</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="red-req">Rejected</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="red-req">Rejected</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="green-req">Accepted</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="green-req">Accepted</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="red-req">Rejected</td>
+                    </tr>
+                    <tr class="tr-content">
+                        <td>Car</td>
+                        <td>Benz</td>
+                        <td>20/05/2019</td>
+                        <td>lorem ipsum pocjosd</td>
+                        <td class="red-req">Rejected</td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
     <footer>
         <div class="footer-container">
             <div>
@@ -154,6 +142,7 @@
             </div>
         </div>
     </footer>
+    <script src="../Assets/js/nav.js"></script>
 </body>
 
 </html>

@@ -22,6 +22,10 @@ nav{
     font-family: 'Indie Flower', cursive !important;
 }
 
+.brand a{
+    text-decoration: none;
+}
+
 nav span i{
     padding-left: 10px;
     font-size: 30px;
@@ -35,7 +39,7 @@ nav span i{
 .main-ul li{
     display: inline-block;
     height: 30px;
-    padding: 10px 10px 0;
+    padding: 14px 13px 0;
 }
 
 .main-ul li a{
@@ -54,31 +58,6 @@ nav span i{
     color: white !important;
 }
 
-.parent-li{
-    padding-right: 10px;
-    padding-left: 0 !important;
-}
-
-.sub-ul li{
-    position: absolute;
-    width: 54px;
-    background-color: #30c252;
-    margin-top: 2px;
-    padding-left: 0 !important;
-    display: none;
-}
-
-.sub-ul li a{
-    color: #24292e;
-}
-
-.parent-li:hover .sub-ul li{
-    display: block;
-    color: black;
-    background-color: #30c252;
-}
-
-
 .active{
     color: #24292e !important;
     background-color: #30c252;
@@ -88,9 +67,16 @@ nav span i{
     color: black !important;
 }
 
+.fa-bars{
+    margin: 10px 10px;
+    font-size: 25px;
+    color: #30c252;
+    display: none !important;
+}
+
 /*index page style*/
 .site-bg{
-    background: url(../images/car.jpeg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849298/workshop_vgwbx8.jpg) no-repeat center;
     background-size: cover;
     height: 30em;
     text-align: center;
@@ -113,6 +99,13 @@ nav span i{
 .index-box{
     text-align: center;
     box-shadow: 1px 1px 2px #aaa;
+}
+
+.index-box i{
+    margin: 1em;
+    align-content: center;
+    font-size: 5em; 
+    color: #30c252;
 }
 
 .index-sign-button{
@@ -160,7 +153,7 @@ nav span i{
     display: flex;
     flex-direction: column;
     text-align: center; 
-    margin-bottom: 3em;
+    margin-bottom: 10em;
 }
 
 .sign h1{
@@ -177,6 +170,7 @@ nav span i{
     width: 15em;
     border: 2px solid #30c252;
     border-radius: 5px;
+    padding-left: 8px; 
 }
 
 #submit{
@@ -198,7 +192,7 @@ nav span i{
 /*contact style*/
 .contact-container{
     text-align: center;
-    margin: 5em;
+    margin-top: 5em;
 }
 
 .contact-container h1{
@@ -223,7 +217,7 @@ nav span i{
 }
 
 
-.contact-submit input{
+.contact-submit{
     padding: 10px 20px;
     border: 2px solid #30c252;
     border-radius: 5px;
@@ -258,69 +252,68 @@ nav span i{
     margin: 2em 0;
 }
 
+.box{
+    text-align: center;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
 /*background images for .box*/
 .img-car{
-    background: url(../images/car.jpeg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849370/car_dsvheu.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-laptop{
-    background: url(../images/laptop.jpeg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849390/laptop_ytqtci.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-phone{
-    background: url(../images/phone.jpeg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849426/phone_ldhbjk.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-tv{
-    background: url(../images/tv.jpg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849413/tv_mvagkn.jpg) no-repeat center;
     background-size: cover;    
     height: 10em;
     text-align: center;
 }
 
 .img-fridge{
-    background: url(../images/fridge.jpg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849384/fridge_hwrcvj.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-ac{
-    background: url(../images/ac.jpg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849379/ac_boxtqr.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-microwave{
-    background: url(../images/microwave.jpg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849400/microwave_z4yl5h.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 
 .img-washingmachine{
-    background: url(../images/washing%20machine.jpg) no-repeat center;
+    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849428/washing_machine_gmtm7o.jpg) no-repeat center;
     background-size: cover;
     height: 10em;
     text-align: center;
 }
 /**/
-
-.box{
-    text-align: center;
-    box-shadow: 1px 1px 2px #aaa;
-}
-
 
 .box textarea{
     margin: 2em 0;
@@ -376,7 +369,6 @@ button{
     padding: 10px 20px;
     border: 2px solid #30c252;
     border-radius: 5px;
-    color: #00c4cc;
     background-color: #ffffff;
     margin: 0 20px 0;
 }
@@ -425,3 +417,150 @@ button{
     text-align: center;
 }
 
+/*
+.main-ul .icon{
+    display: none;
+}
+*/
+
+/* media query */
+@media only screen and (max-width: 720px) {
+    /* navbar style */
+    nav{
+        width: 100%;
+    }
+    
+    .main-ul{
+                display: none;
+
+    }
+    
+    .nav-toggle{
+        text-align: center;
+        position: absolute;
+        top: 2.5em;
+        display: flex;
+        flex-direction: column;
+        background-color: #24292e;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .fa-bars{
+        display: block !important;
+    }
+  
+
+      /*  */
+/* 
+      .main-ul:not(:first-child){
+        display: none;
+    }
+
+    .main-ul .icon{
+        float: right;
+        display: block;
+    } */
+
+    /* index page style */
+    .site-bg{
+        height: 15em;
+    }
+
+    .site-bg h1{
+        font-size: 3em;
+    }
+
+    .index-box-container{
+        display: flex !important;
+        flex-direction: column;
+        margin: 2em;
+    }
+
+    .index-box{
+        margin-bottom: 2em;
+/*        height: 10em;*/
+    }
+
+    .index-box h3{
+        margin: 1em;
+    }
+
+    .list-container li{
+        margin: 1em; 
+        list-style: none;
+    }
+
+    /*Sign in style*/
+    .sign{
+        margin-bottom: 1em;
+    }
+    
+    /* contact style */
+
+    .contact-container{
+        text-align: center;
+        margin: 3em;
+    }
+    
+    .contact-input input{
+        width: 100%;
+    }
+    
+    .social-icons ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+    }
+    
+    .social-icons i{
+        padding-bottom: 0.5em;
+        font-size: 5em;
+    }
+    
+    .contact-container h1{
+        font-size: 30px;
+        text-align: center;
+        margin: 35px;
+    }
+    
+    .contact-text textarea{
+/*        padding-left: 5px;*/
+        width: 100%;
+    }
+
+    /* user service style */
+    .box-container{
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+    
+    .box{
+        text-align: center;
+        box-shadow: 1px 1px 2px #aaa;
+        margin: 0 0 2em;
+    }
+
+    /* admin review page*/
+    .search-btn{
+        margin-right: 1em; 
+    }
+
+    .accept{
+        display: none;
+    }
+
+    .reject{
+        display: none;
+    }
+
+    .table-container tbody .tr-content:hover .accept{
+        display: block;
+    }
+
+    .table-container tbody .tr-content:hover .reject{
+        display: block;
+    }  
+}

@@ -8,7 +8,7 @@
     <title>FIX IT</title>
     <link rel="stylesheet" href="./Assets/css/style.css">
     <!--    favicon-->
-   <link rel="icon" type="image/x-icon" href="./Assets/images/fav2.jpg">
+    <link rel="icon" type="image/x-icon" href="./Assets/images/fav2.jpg">
     <!--    font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -19,17 +19,15 @@
 <body>
     <header>
         <nav>
-            <span class="brand"><i class="fas fa-tools"></i>FIX IT</span>
+            <span class="brand"><i class="fas fa-tools"></i><a href="./index.html">FIX IT</a></span>
             <ul class="main-ul">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html#about">About us</a></li>
+                <li><a href="index.html#about">About us</a></li>
                 <li class="active"><a href="./contact-us.html">Contact us</a></li>
-                <li class="parent-li"><a href="./sign-in.html">Sign in</a>
-                    <ul class="sub-ul">
-                        <li><a href="./sign-up.html">Sign up</a></li>
-                    </ul>
-                </li>
+                <li><a href="./sign-in.html">Sign in</a></li>
+                <li><a href="./sign-up.html">Sign up</a></li>
             </ul>
+            <i class="fas fa-bars" id="bar"></i>
         </nav>
     </header>
     <main>
@@ -46,8 +44,8 @@
                         <div class="contact-text">
                             <textarea name="" id="" cols="60" rows="10" placeholder="Your text goes here..."></textarea>
                         </div>
-                        <div class="contact-submit">
-                            <input type="button" value="submit">
+                        <div>
+                            <input type="button" value="submit" class="contact-submit">
                         </div>
                     </form>
                 </div>
@@ -79,6 +77,7 @@
             </div>
         </div>
     </footer>
+    <script src="Assets/js/nav.js"></script>
 </body>
 
 </html>
