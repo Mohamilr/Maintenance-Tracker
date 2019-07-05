@@ -246,79 +246,22 @@ nav span i{
 
 /*user service style*/
 .box-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
-    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;    
 }
 
 .box{
     text-align: center;
     box-shadow: 1px 1px 2px #aaa;
+    padding: 3em;   
 }
-
-/*background images for .box*/
-.img-car{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849370/car_dsvheu.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-laptop{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849390/laptop_ytqtci.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-phone{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849426/phone_ldhbjk.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-tv{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849413/tv_mvagkn.jpg) no-repeat center;
-    background-size: cover;    
-    height: 10em;
-    text-align: center;
-}
-
-.img-fridge{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849384/fridge_hwrcvj.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-ac{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849379/ac_boxtqr.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-microwave{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849400/microwave_z4yl5h.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-
-.img-washingmachine{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849428/washing_machine_gmtm7o.jpg) no-repeat center;
-    background-size: cover;
-    height: 10em;
-    text-align: center;
-}
-/**/
 
 .box textarea{
     margin: 2em 0;
     border: 2px solid #30c252;
     border-radius: 5px;
+    padding: 5px;
 }
 
 /*button*/
@@ -514,21 +457,20 @@ button{
     }
     
     .contact-text textarea{
-/*        padding-left: 5px;*/
         width: 100%;
     }
-
-    /* user service style */
-    .box-container{
-        display: flex;
-        flex-direction: column;
-        margin: 1em;
-    }
     
+    /*user service style*/
+    .box-container{
+       display: flex;
+       justify-content: center;
+       margin: 2em 0;    
+    }
+
     .box{
-        text-align: center;
-        box-shadow: 1px 1px 2px #aaa;
-        margin: 0 0 2em;
+       text-align: center;
+       box-shadow: 1px 1px 2px #aaa;
+       padding: 1em;    
     }
 
     /* admin review page*/
