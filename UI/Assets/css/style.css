@@ -76,7 +76,7 @@ nav span i{
 
 /*index page style*/
 .site-bg{
-    background: url(https://res.cloudinary.com/dvbwpicno/image/upload/v1561849298/workshop_vgwbx8.jpg) no-repeat center;
+    background: url(../images/site-bg.jpg) no-repeat center;
     background-size: cover;
     height: 30em;
     text-align: center;
