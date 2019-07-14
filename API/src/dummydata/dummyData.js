@@ -5,7 +5,7 @@ const Request = [
     itemType: 'benz',
     date: new Date(),
     complaint: 'i think its the break lever',
-    status: 'delivered'
+    status: 'delivered',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const Request = [
     itemType: 'mac book pro',
     date: new Date(),
     complaint: 'i think its the battery',
-    status: 'pending'
+    status: 'pending',
   },
   {
     id: 3,
@@ -21,8 +21,8 @@ const Request = [
     itemType: 'LG',
     date: new Date(),
     complaint: 'i think its the plug',
-    status: 'delivered'
-  }
+    status: 'delivered',
+  },
 ];
 
 export default Request;

@@ -5,7 +5,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 // get all routes
-import requestRoutes from './routes/requestRoutes'
+import requestRoutes from './routes/requestRoutes';
 
 // initialize express
 const app = express();
@@ -23,11 +23,11 @@ app.use('/api/v1/', requestRoutes);
 
 
 // to test if app is running
-app.get('/', (req, res) => {
-  res.json({ message: 'it will work' });
-});
+app.get('/users', (req, res) => {
+  res.json({ message: 'it will work' })
+})
 
 // start the express server
 app.listen(port, () => {
-  console.log(`app is running on port ${port}`);
+  console.log(`app is running on port ${port}`)
 })
