@@ -257,7 +257,7 @@ nav span i{
     padding: 3em;   
 }
 
-.box textarea{
+.discription{
     margin: 2em 0;
     border: 2px solid #30c252;
     border-radius: 5px;
@@ -272,7 +272,7 @@ button{
     color: #30c252;
     border-radius: 5px;
     padding: 0 10px;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 /*dashboard user style*/
@@ -300,6 +300,26 @@ button{
     box-shadow: 1px 1px 2px #aaa;
 }
 
+.the-modal{
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 2.75em;
+    color: #ffffff; 
+    background-color: #30c252;
+    overflow: auto;
+    padding-top: 4em; 
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+}
+
+.cancel-modal{
+    font-size: 3em;
+    cursor:default;
+    color: red;
+}
+
 /*admin review page style*/
 /*styles from user dashboard .tr-content, .table-container*/
 .search-container{
@@ -324,14 +344,14 @@ button{
     background-color: #ffffff;
 }
 
-.accept{
+.btn-green{
      margin: 10px 0;
-     border: 2px solid green;
+     border: 2px solid #30c252;
      color: green;
      background-color: white;
 }
 
-.reject{
+.btn-red{
     margin: 10px 0;
     border: 2px solid red;
     color: red;
@@ -360,11 +380,6 @@ button{
     text-align: center;
 }
 
-/*
-.main-ul .icon{
-    display: none;
-}
-*/
 
 /* media query */
 @media only screen and (max-width: 720px) {
@@ -473,24 +488,45 @@ button{
        padding: 1em;    
     }
 
+    /* dashboard user style   */
+/*
+    .tr-content{
+    position: relative;
+    height: 40px;
+    box-shadow: 1px 1px 2px #aaa;
+    }
+
+    .set-btn{
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    }
+*/
+    
+    .the-modal{
+    text-align: center;
+    position: fixed;
+    top: 0em;
+    padding-top: 2em; 
+    }
     /* admin review page*/
     .search-btn{
         margin-right: 1em; 
     }
 
-    .accept{
+    .btn-green{
         display: none;
     }
 
-    .reject{
+    .btn-red{
         display: none;
     }
 
-    .table-container tbody .tr-content:hover .accept{
+    .table-container tbody .tr-content:hover .btn-green{
         display: block;
     }
 
-    .table-container tbody .tr-content:hover .reject{
+    .table-container tbody .tr-content:hover .btn-red{
         display: block;
     }  
 }
