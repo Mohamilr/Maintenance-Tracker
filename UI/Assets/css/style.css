@@ -331,7 +331,7 @@ button{
     display: none;
     text-align: center;
     position: fixed;
-    top: 2.75em;
+    top: 0;
     color: #ffffff; 
     background-color: #30c252;
     overflow: auto;
