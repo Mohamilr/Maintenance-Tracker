@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Cardo', serif;
+  box-sizing: border-box;
 }
 
 a{
@@ -38,7 +39,7 @@ nav span i{
 
 .main-ul li{
     display: inline-block;
-    height: 30px;
+    height: 45px;
     padding: 14px 13px 0;
 }
 
@@ -281,23 +282,49 @@ button{
     margin: 1em 0 2em;
 }
 
-.table-container{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.red-req{
-    color: red;
-}
-
-.green-req{
-    color: green;
-}
-
-.tr-content{
-    height: 40px;
+[db-container] {
     box-shadow: 1px 1px 2px #aaa;
+    margin-bottom: 2em;
+    border-bottom: 2px solid #30c252;
+}
+
+[db-container]:hover [complaint] {
+    display: flex !important;  
+}
+
+[db-container]:hover .bd-head {
+    border-bottom: 2px solid #30c252;
+}
+
+.bd-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+}
+
+[complaint] {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    margin: 10px 3em;
+    padding: 10px;
+}
+
+[complaint] .btn-green, .btn-red{
+    align-self: center;
+    width: auto;
+}
+
+.red-req {
+    color: #e53525;
+}
+
+.green-req {
+    color: #30c252;
+}
+
+.yellow-req {
+    color: #f2e12c;
 }
 
 .the-modal{
@@ -321,7 +348,6 @@ button{
 }
 
 /*admin review page style*/
-/*styles from user dashboard .tr-content, .table-container*/
 .search-container{
     display: flex;
     justify-content: center;
@@ -344,33 +370,36 @@ button{
     background-color: #ffffff;
 }
 
-.btn-green{
+.btn-green {
      margin: 10px 0;
      border: 2px solid #30c252;
      color: green;
      background-color: white;
 }
 
-.btn-red{
+.btn-red {
     margin: 10px 0;
     border: 2px solid red;
     color: red;
     background-color: white;
 }
 
-.accept:active{
+.btn-green:hover {
     color: white;
     background-color: green;
 }
 
-.reject:active{
+.btn-red:hover {
     color: white;
     background-color: red;
 }
 
 /*admin dashboard style*/
-/*styles from user dashboard .tr-content, .table-container*/
 /*style from review .search-container .search input .search-btn*/
+[tb-headers-admin] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
 
 /*footer*/
 .footer-container{
@@ -389,8 +418,7 @@ button{
     }
     
     .main-ul{
-                display: none;
-
+        display: none;
     }
     
     .nav-toggle{
@@ -489,44 +517,25 @@ button{
     }
 
     /* dashboard user style   */
-/*
-    .tr-content{
-    position: relative;
-    height: 40px;
-    box-shadow: 1px 1px 2px #aaa;
+    [complaint] {
+       margin: 10px 1em;
     }
-
-    .set-btn{
-    position: fixed;
-    top: 2em;
-    right: 2em;
-    }
-*/
     
     .the-modal{
-    text-align: center;
-    position: fixed;
-    top: 0em;
-    padding-top: 2em; 
+      text-align: center;
+      position: fixed;
+      top: 0em;
+      padding-top: 2em; 
     }
+    
     /* admin review page*/
+    .search-input{
+      padding: 10px 20px;
+      width: 10em;
+      margin: 0 10px 0;
+    }
+
     .search-btn{
-        margin-right: 1em; 
+      padding: 10px 20px;
     }
-
-    .btn-green{
-        display: none;
-    }
-
-    .btn-red{
-        display: none;
-    }
-
-    .table-container tbody .tr-content:hover .btn-green{
-        display: block;
-    }
-
-    .table-container tbody .tr-content:hover .btn-red{
-        display: block;
-    }  
 }
