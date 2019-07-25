@@ -15,7 +15,6 @@ const port = 3000;
 
 // configure body-parser
 // app.use(bodyParser.json());
-// app.use(bodyParser.json());
 app.use(bodyParser.json({ extended: true }));
 
 // configure routes
@@ -23,7 +22,7 @@ app.use('/api/v1/', requestRoutes);
 
 
 // to test if app is running
-app.get('/users', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: 'it will work' })
 })
 
