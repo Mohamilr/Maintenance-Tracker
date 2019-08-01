@@ -18,20 +18,24 @@ const RequestController = {
     
     // an error message if the id is not present
     if(!singleRequest){
-      return res.status(404).json({ message: `request with id ${id} not found` })
+       res.status(404).json({ message: `request with id ${id} not found` })
       }
     // return single request
     return res.status(200).json({ singleRequest });
+    
  },
  addRequest(req, res) {
     const lastId = requests[requests.length - 1].id;
     const newID = lastId + 1;
 
-    const { faultyItem } = req.body;
-    const { itemType } = req.body;
-    const { complaint } = req.body;
+    const { faultyItem, itemType, complaint} = req.body;
     const status = 'pending';
 
+    if(!faultyItem || !itemType || !complaint){
+      res.status(400).json({
+        message: "input all body"
+      })
+    }
     // adds request to the present requests 
     requests.push({
         id: newID,
@@ -58,9 +62,7 @@ const RequestController = {
   },
   modifyARequest(req, res) {
     const id = parseInt(req.params.id);
-    const { faultyItem } = req.body;
-    const { itemType } = req.body;
-    const { complaint } = req.body;
+    const { faultyItem, itemType, complaint} = req.body;
 
     requests.map(request => {
       if(request.id === id) {
@@ -74,7 +76,6 @@ const RequestController = {
         }
       }
     }) 
-
 
       return res.status(200).json({ 
         message: 'request updated successfully'
