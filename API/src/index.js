@@ -14,7 +14,6 @@ const app = express();
 const port = 3000;
 
 // configure body-parser
-// app.use(bodyParser.json());
 app.use(bodyParser.json({ extended: true }));
 
 // configure routes
