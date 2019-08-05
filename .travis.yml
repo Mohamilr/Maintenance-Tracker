@@ -5,7 +5,8 @@ language: node_js
 node_js: 
   - "stable"
 
-before_script: 
+before_script:
+  - npm install coveralls nyc 
   - cd API
 
 script: 
