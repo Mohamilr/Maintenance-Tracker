@@ -12,8 +12,7 @@ cache:
 before_script: 
   - cd API
 
-script: 
-  - npm run coverage
+after_success: npm run coverage
 
 notifications:
   - email: false
