@@ -1,16 +1,17 @@
-sudo: false
-
 language: node_js
 
 node_js: 
   - "stable"
 
+cache: 
+  directories:
+  - "node_modules"
+
 before_script:
   - cd API
   - npm install coveralls nyc 
 
-script: 
-  - npm run test
+script:
   - npm run coverage
 
 notifications:
