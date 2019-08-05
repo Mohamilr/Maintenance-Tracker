@@ -246,6 +246,23 @@ nav span i{
 }
 
 /*user service style*/
+.notification{
+    text-align: center;
+    color: white;
+}
+
+.notify{
+    background-color: lightgreen;
+    padding: 5px;
+    height: 30px;
+}
+
+.notify-red{
+    background-color: red;
+    padding: 5px;
+    height: 30px;
+}
+
 .box-container{
     display: flex;
     justify-content: center;
@@ -360,14 +377,7 @@ button{
     border-radius: 5px;
     background-color: #ffffff;
     margin: 0 20px 0;
-}
-
-.search-btn{
-    padding: 10px 20px;
-    border: 2px solid #30c252;
-    border-radius: 5px;
-    color: #30c252;
-    background-color: #ffffff;
+    font-size: 20px;
 }
 
 .btn-green {
@@ -531,11 +541,7 @@ button{
     /* admin review page*/
     .search-input{
       padding: 10px 20px;
-      width: 10em;
+      width: 15em;
       margin: 0 10px 0;
-    }
-
-    .search-btn{
-      padding: 10px 20px;
     }
 }
