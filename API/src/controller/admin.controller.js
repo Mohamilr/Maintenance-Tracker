@@ -19,12 +19,30 @@ const adminController = {
             itemType: request.itemType,
             date: request.date,
             complaint: request.complaint,
-            status: "pending"
+            status: "Pending"
         }
        })
       
     res.status(200).json({
-        message: "request approved"
+        message: "request approved successfully"
+    })
+   },
+   disapproveARequest(req, res) {
+       const id = parseInt(req.params.id);
+
+       requests.map(request => {
+        requests[id -1] = {
+            id,
+            faultyItem: request.faultyItem,
+            itemType: request.itemType,
+            date: request.date,
+            complaint: request.complaint,
+            status: "Disapproved"
+        }
+       })
+      
+    res.status(200).json({
+        message: "request disapproved successfully"
     })
    }
 }
