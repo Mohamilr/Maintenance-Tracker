@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Mohamilr/Maintenance-Tracker.svg?branch=develop)](https://travis-ci.org/Mohamilr/Maintenance-Tracker)
+[![Build Status](https://travis-ci.org/Mohamilr/Maintenance-Tracker.svg?branch=ft-coverage-work)](https://travis-ci.org/Mohamilr/Maintenance-Tracker)
 [![Coverage Status](https://coveralls.io/repos/github/Mohamilr/Maintenance-Tracker/badge.svg?branch=develop)](https://coveralls.io/github/Mohamilr/Maintenance-Tracker?branch=develop)
 
 # Maintenance-Tracker
