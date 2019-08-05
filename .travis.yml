@@ -9,6 +9,7 @@ before_script:
   - cd API
 
 script: 
+  - npm run test
   - npm run coverage
 
 notifications:
