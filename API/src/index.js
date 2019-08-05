@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 //catch wrong route
 app.use('*', (req, res) => {
-  res.json({ message: 'Route not found' })
+  res.json({ message: 'Route Not Found' })
 })
 
 // start the express server
