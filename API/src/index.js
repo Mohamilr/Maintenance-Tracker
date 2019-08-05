@@ -22,7 +22,12 @@ app.use('/api/v1/', requestRoutes);
 
 // to test if app is running
 app.get('/', (req, res) => {
-  res.json({ message: 'it will work' })
+  res.json({ message: 'welcome to the request api' })
+})
+
+//catch wrong route
+app.use('*', (req, res) => {
+  res.json({ message: 'Route not found' })
 })
 
 // start the express server

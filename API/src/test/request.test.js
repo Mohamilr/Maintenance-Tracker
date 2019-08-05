@@ -78,6 +78,7 @@ describe('POST addRequest', () => {
   })
 })
 
+//test to modify a request
 describe('PUT modifyARequest', () => {
   it('should modify a request', (done) => {
     const id = 2;
