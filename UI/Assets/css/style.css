@@ -191,50 +191,16 @@ nav span i{
 }
 
 /*contact style*/
-.contact-container{
-    text-align: center;
-    margin-top: 5em;
-}
-
-.contact-container h1{
-    font-size: 30px;
-}
-
-.contact-form{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-
-.contact-input {
-    margin: 3%;
-}
-
-.contact-text textarea{
-    margin-bottom: 3%;
-    border: 2px solid #30c252;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-
-.contact-submit{
-    padding: 10px 20px;
-    border: 2px solid #30c252;
-    border-radius: 5px;
-    color: #30c252;
-    background-color: #ffffff;
-}
 
 .social-icons ul{
     display: flex;
     justify-content: space-around;
     list-style: none;
-    margin: 3em;
+    margin: 1em;
 }
 
 .social-icons i{
-    font-size: 5em;
+    font-size: 2em;
 }
 
 .social-icons i{
@@ -415,7 +381,7 @@ button{
 .footer-container{
     color: #30c252;
     background-color: #24292e;
-    padding: 2em ;
+    padding: 1em ;
     text-align: center;
 }
 
@@ -481,36 +447,8 @@ button{
     }
     
     /* contact style */
-
-    .contact-container{
-        text-align: center;
-        margin: 3em;
-    }
-    
-    .contact-input input{
-        width: 100%;
-    }
-    
-    .social-icons ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        list-style: none;
-    }
-    
     .social-icons i{
-        padding-bottom: 0.5em;
-        font-size: 5em;
-    }
-    
-    .contact-container h1{
-        font-size: 30px;
-        text-align: center;
-        margin: 35px;
-    }
-    
-    .contact-text textarea{
-        width: 100%;
+        font-size: 2em;
     }
     
     /*user service style*/
