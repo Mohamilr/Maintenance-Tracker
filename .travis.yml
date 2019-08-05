@@ -6,8 +6,8 @@ node_js:
   - "stable"
 
 before_script:
-  - npm install coveralls nyc 
   - cd API
+  - npm install coveralls nyc 
 
 script: 
   - npm run test
