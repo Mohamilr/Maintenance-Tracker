@@ -8,7 +8,6 @@ cache:
 
 before_script:
   - cd API
-  - npm install coveralls nyc --save-dev
 
 script:
   - npm run coverage
