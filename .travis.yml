@@ -8,6 +8,7 @@ cache:
 
 before_script:
   - cd API
+  - npm install coveralls@3.0.2 nyc@13.3.0 
 
 script:
   - npm run coverage
