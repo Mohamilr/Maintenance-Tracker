@@ -4,14 +4,18 @@ import express from 'express';
 // import body-parser
 import bodyParser from 'body-parser';
 
+import dotenv from 'dotenv';
+
 // get all routes
 import requestRoutes from './routes/requestRoutes';
 
 // initialize express
 const app = express();
 
+dotenv.config();
+
 // create port
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // configure body-parser
 app.use(bodyParser.json({ extended: true }));
@@ -31,7 +35,7 @@ app.use('*', (req, res) => {
 })
 
 // start the express server
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`app is running on port ${port}`)
 })
 
