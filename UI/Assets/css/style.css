@@ -20,11 +20,11 @@ nav{
     padding:  3px 0 0;
     color: #30c252;
     font-size: 25px;
-    font-family: 'Indie Flower', cursive !important;
 }
 
 .brand a{
     text-decoration: none;
+    font-family: 'Indie Flower', cursive !important;
 }
 
 nav span i{
@@ -132,17 +132,6 @@ nav span i{
 .comment p{
     font-size: 20px;
     font-family: 'Poiret One', cursive !important;
-}
-
-.ceo{
-    margin: 3em;
-    text-align: center;
-}
-
-.ceo img{
-    height: 300px;
-    border: 5px solid #30c252; 
-    border-radius: 100%; 
 }
 
 /*Sign in style*/
@@ -446,7 +435,7 @@ button{
         margin-bottom: 1em;
     }
     
-    /* contact style */
+    /* contact style */   
     .social-icons i{
         font-size: 2em;
     }
