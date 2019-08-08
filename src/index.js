@@ -36,7 +36,7 @@ app.use('*', (req, res) => {
 
 // start the express server
 app.listen(PORT, () => {
-  console.log(`app is running on port ${port}`)
+  console.log(`app is running on port ${PORT}`)
 })
 
 // export app to be used in test
