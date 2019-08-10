@@ -4,16 +4,24 @@ import express from 'express';
 // import body-parser
 import bodyParser from 'body-parser';
 
-// get all routes
+//imort dotenv
+import dotenv from 'dotenv';
+
+// request route
 import requestRoutes from './routes/requestRoutes';
 //admin route
 import adminRoute from './routes/adminRoutes';
+//sign in/up route
+import signRoute from './routes/sign.route';
 
 // initialize express
 const app = express();
 
+//configure donenv
+dotenv.config();
+
 // create port
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // configure body-parser
 app.use(bodyParser.json({ extended: true }));
@@ -22,6 +30,8 @@ app.use(bodyParser.json({ extended: true }));
 app.use('/api/v1/', requestRoutes);
 //admin route
 app.use('/api/v1/', adminRoute);
+//sign in/up route
+app.use('/api/v1', signRoute);
 
 
 // to test if app is running
@@ -35,8 +45,8 @@ app.use('*', (req, res) => {
 })
 
 // start the express server
-app.listen(port, () => {
-  console.log(`app is running on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`app is running on port ${PORT}`)
 })
 
 // export app to be used in test
