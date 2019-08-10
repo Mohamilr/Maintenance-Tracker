@@ -15,7 +15,7 @@ const authenticate = {
                 });
             }
             else {
-                    console.log('ERROR, could not get token');
+                console.log('ERROR, could not get token');
             }
         })
     },
