@@ -1,8 +1,8 @@
 const user = [
     {
         id: 1,
-        username: 'damilola',
-        password: 'damilola'
+        username: 'admin',
+        password: 'dammy'
     },
     {
         id: 2,

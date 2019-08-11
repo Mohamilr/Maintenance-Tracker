@@ -3,6 +3,30 @@ import user from '../dummydata/dummyUser';
 
 
 const authenticate = {
+    signUp(req, res) {
+        const id = user[user.length - 1].id;
+        const {username, password} = req.body;
+
+        user.push({
+            id: id + 1,
+            username,
+            password
+        })
+        if(!username || !password){
+            res.status(400).json({
+                message: "username and password required"
+            })
+        }
+        else{
+            jwt.sign({ user }, 'secretkey', { expiresIn: '1h' }, (err, token) => {
+                res.status(200).json({
+                    user,
+                    token
+                })
+            })
+
+        }
+    },
     logIN(req, res) {
         const { username, password } = req.body;
 

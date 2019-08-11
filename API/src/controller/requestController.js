@@ -8,7 +8,7 @@ const RequestController = {
     jwt.verify(req.token, 'secretkey', (err, data) => {
       if (err) {
         res.sendStatus(403)
-        console.log('cdncndjcnd')
+        console.log('error')
       }
       else {
         //all requests
