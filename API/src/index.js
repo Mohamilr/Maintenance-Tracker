@@ -27,16 +27,16 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json({ extended: true }));
 
 // configure routes
-app.use('/api/v1/', requestRoutes);
+app.use('/api/v2/', requestRoutes);
 //admin route
-app.use('/api/v1/', adminRoute);
+app.use('/api/v2/', adminRoute);
 //sign in/up route
-app.use('/api/v1', signRoute);
+app.use('/api/v2', signRoute);
 
 
 // to test if app is running
 app.get('/', (req, res) => {
-  res.json({ message: 'welcome to the request api' })
+  res.json({ message: 'welcome to the request api v2' })
 })
 
 //catch wrong route
