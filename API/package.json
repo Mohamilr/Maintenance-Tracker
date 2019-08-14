@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "nyc mocha --require @babel/register src/test ",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test/request.test.js --exit || true",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "createTable": "babel-node src/model/connect.database.js"
+
   },
   "repository": {
     "type": "git",
