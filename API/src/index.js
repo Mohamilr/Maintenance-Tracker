@@ -27,11 +27,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json({ extended: true }));
 
 // configure routes
-app.use('/api/v2/', requestRoutes);
+app.use('/api/v1/', requestRoutes);
 //admin route
-app.use('/api/v2/', adminRoute);
+app.use('/api/v1/', adminRoute);
 //sign in/up route
-app.use('/api/v2', signRoute);
+app.use('/api/v1', signRoute);
 
 
 // to test if app is running

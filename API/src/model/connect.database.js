@@ -20,14 +20,14 @@ pool.on('connect', () => {});
 const createTable = async () => {
     const tableQuery = `CREATE TABLE IF NOT EXISTS 
     users(
-        userId SERIAL PRIMARY KEY,
+        userId SERIAL PRIMARY KEY NOT NULL UNIQUE,
         username VARCHAR(50) NOT NULL,
         password VARCHAR(50) NOT NULL
     )`;
 
     try{
         await pool.query(tableQuery);
-        console.log('table created')
+        console.log('users table created')
     } catch(error){
        console.log(error)
     }
@@ -37,14 +37,14 @@ const createTable = async () => {
 const createRequestTable = async () => {
     const requestTableQuery = `CREATE TABLE IF NOT EXISTS
     requests(
-        requestId SERIAL PRIMARY KEY,
+        requestId SERIAL PRIMARY KEY NOT NULL UNIQUE,
         faultyItem VARCHAR(50) NOT NULL,
         itemType VARCHAR(50) NOT NULL,
-        date DATE,
+        date DATE NOT NULL,
         complaint VARCHAR(50) NOT NULL,
-        status VARCHAR(20),  
-        userId INT,
-        FOREIGN KEY(userId) REFERENCES users(userId)   
+        status VARCHAR(20) NOT NULL,  
+        userId INT NOT NULL,
+        FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE
     )`;
     try{
         await pool.query(requestTableQuery);
@@ -55,12 +55,12 @@ const createRequestTable = async () => {
     }
 }
 
-//drop table
+// drop table
 // const dropTable = async () => {
 //     const query = `DROP TABLE IF EXISTS users`;
 //     try{
 //         await pool.query(query);
-//         console.log('table dropped');
+//         console.log('user table dropped');
 //     }
 //     catch(error){
 //         console.log(error);
