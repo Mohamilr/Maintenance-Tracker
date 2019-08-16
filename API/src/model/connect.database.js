@@ -21,8 +21,8 @@ const createTable = async () => {
     const tableQuery = `CREATE TABLE IF NOT EXISTS 
     users(
         userId SERIAL PRIMARY KEY NOT NULL UNIQUE,
-        username VARCHAR(50) NOT NULL,
-        password VARCHAR(50) NOT NULL
+        username VARCHAR(200) NOT NULL,
+        password VARCHAR(250) NOT NULL
     )`;
 
     try{
@@ -38,10 +38,10 @@ const createRequestTable = async () => {
     const requestTableQuery = `CREATE TABLE IF NOT EXISTS
     requests(
         requestId SERIAL PRIMARY KEY NOT NULL UNIQUE,
-        faultyItem VARCHAR(50) NOT NULL,
-        itemType VARCHAR(50) NOT NULL,
+        faultyItem VARCHAR(100) NOT NULL,
+        itemType VARCHAR(100) NOT NULL,
         date DATE NOT NULL,
-        complaint VARCHAR(50) NOT NULL,
+        complaint VARCHAR(100) NOT NULL,
         status VARCHAR(20) NOT NULL,  
         userId INT NOT NULL,
         FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE
@@ -57,7 +57,7 @@ const createRequestTable = async () => {
 
 // drop table
 // const dropTable = async () => {
-//     const query = `DROP TABLE IF EXISTS users`;
+//     const query = `DROP TABLE IF EXISTS admin`;
 //     try{
 //         await pool.query(query);
 //         console.log('user table dropped');
@@ -66,6 +66,7 @@ const createRequestTable = async () => {
 //         console.log(error);
 //     }
 // };
+
 
 
 //first table
