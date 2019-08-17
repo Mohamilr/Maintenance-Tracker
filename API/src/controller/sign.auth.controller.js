@@ -26,14 +26,15 @@ const authenticate = {
             const hashedPassword = await bcrypt.hash(password, salt);
 
 
-            //if a username exists
+            // if a username exists
             if (check.rows[0]) {
                 res.status(400).json({
                     message: 'username already exist'
                 })
             }
+
             // admin signup
-            else if (process.env.ADMIN_USERNAME === username && process.env.ADMIN_PASSWORD === password) {
+             if (process.env.ADMIN_USERNAME === username && process.env.ADMIN_PASSWORD === password) {
                 const signupQuery = `INSERT INTO users (username, password)
                 VALUES ($1, $2) RETURNING *`;
                 const values = [username, hashedPassword];
@@ -41,7 +42,7 @@ const authenticate = {
 
                 // generate admin token
                 jwt.sign({ username, password }, process.env.ADMIN_SECRETKEY, { expiresIn: '1h' }, (err, token) => {
-                    res.status(200).json({
+                    res.status(201).json({
                         message: 'admin signed up successfully',
                         token,
                         user: adminResult.rows[0]
@@ -58,7 +59,7 @@ const authenticate = {
 
                 // generate token
                 jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
-                    return res.status(200).json({
+                    return res.status(201).json({
                         message: 'user signed up successfully',
                         token,
                         user: signed.rows[0]

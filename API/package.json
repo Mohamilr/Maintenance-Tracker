@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test/request.test.js --exit || true",
+    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test --exit || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "createTable": "babel-node src/model/connect.database.js"
-
   },
   "repository": {
     "type": "git",
@@ -31,17 +30,21 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "sinon": "^7.4.1",
+    "swagger": "^0.7.5",
+    "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.5.5",
+    "ajv": "^5.5.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "coveralls": "^3.0.6",
-    "eslint": "^6.0.1",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.18.0",
     "mocha": "^6.2.0",

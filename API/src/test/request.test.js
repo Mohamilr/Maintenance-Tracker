@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 chai.should();
 
 //test to get all requests 
-describe('GET allRequests', () => {
+describe.skip('GET allRequests', () => {
   it("should get all requests", (done) => {
     chai.request(app)
         .get(`/api/v1/users/requests`)
@@ -20,7 +20,7 @@ describe('GET allRequests', () => {
 });
 
 //test get by id endpoint
-describe('GET request by id', () => {
+describe.skip('GET request by id', () => {
   //test if the requst with id is present
   describe('GET:id getSingleRequest', () => {
     it('should get a single request by id', (done) => {
@@ -36,7 +36,7 @@ describe('GET request by id', () => {
   })
 
   //test if request with id is not present
-  describe('GET:id getSingleRequest', () => {
+  describe.skip('GET:id getSingleRequest', () => {
     it('should give an errror if id is not present', (done) => {
       const id = 4;
       chai.request(app)
@@ -51,7 +51,7 @@ describe('GET request by id', () => {
 })
 
 //test to add a request
-describe('POST addRequest', () => {
+describe.skip('POST addRequest', () => {
   it('should add a request', (done) => {
     chai.request(app)
     .post(`/api/v1/users/requests`)
@@ -61,7 +61,7 @@ describe('POST addRequest', () => {
       itemType: 'dell',
       date: new Date(),
       complaint: 'the mother board',
-      status: 'pending'
+      status: 'Undetermined'
     })
     .set('Accept', 'application/json')
     .end((err, res) => {
@@ -79,7 +79,7 @@ describe('POST addRequest', () => {
 })
 
 //test to modify a request
-describe('PUT modifyARequest', () => {
+describe.skip('PUT modifyARequest', () => {
   it('should modify a request', (done) => {
     const id = 2;
     chai.request(app)

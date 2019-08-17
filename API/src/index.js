@@ -14,6 +14,13 @@ import adminRoute from './routes/adminRoutes';
 //sign in/up route
 import signRoute from './routes/sign.route';
 
+// import swagger ui
+import swaggerUi from 'swagger-ui-express';
+
+// import swagger document
+import swaggerDocument from '../swagger';
+
+
 // initialize express
 const app = express();
 
@@ -33,10 +40,12 @@ app.use('/api/v1/', adminRoute);
 //sign in/up route
 app.use('/api/v1', signRoute);
 
+// swagger route
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// to test if app is running
+// welcome route
 app.get('/', (req, res) => {
-  res.json({ message: 'welcome to the request api v2' })
+  res.json({ message: 'welcome to the request api' })
 })
 
 //catch wrong route

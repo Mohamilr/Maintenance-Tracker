@@ -98,7 +98,7 @@ const RequestController = {
             })
           }
           // response to the post request
-          return res.status(200).json({
+          return res.status(201).json({
             request: newRequest.rows
           })
         }
@@ -138,7 +138,6 @@ const RequestController = {
       const values = [faultyItem, itemType, new Date(), complaint, id];
       const updatedRequest = await pool.query(updateQuery, values);
 
-    console.log(selectedRequest.status);
     // protect enpoint response
     jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
       if (err) {
