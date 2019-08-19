@@ -80,16 +80,8 @@ const authenticate = {
             const value = [username];
             const user = await pool.query(logInQuery, value);
 
-            // WORK HERE
-            // if username is not present in the database
-            if (!user.rows.length) {
-                res.status(404).json({ message: 'incorrect username. please try again or signup if you haven\'t' });
-            }
-
             // compare hashedpasword before login
             const isMatch = await bcrypt.compare(password, user.rows[0].password)
-
-            // const adminIsMatch = await bcrypt.compare(password, user.rows[0].password)
 
             // admin login
             if (user.rows[0].username === process.env.ADMIN_USERNAME && isMatch) {
@@ -117,6 +109,14 @@ const authenticate = {
                 });
                 console.log('ERROR, could not get token');
             }
+
+
+            // if username is not present in the database
+            if (!user.rows.length) {
+                res.status(404).json({ message: 'incorrect username. please try again or signup if you haven\'t' });
+            }
+
+
         }
         catch (err) {
             console.log(err);

@@ -20,6 +20,12 @@ const app = express();
 //configure donenv
 dotenv.config();
 
+import swaggerUi from 'swagger-ui-express';
+
+// import swagger document
+import swaggerDocument from '../swagger.json';
+
+
 // create port
 const PORT = process.env.PORT || 3000;
 
@@ -32,6 +38,10 @@ app.use('/api/v1/', requestRoutes);
 app.use('/api/v1/', adminRoute);
 //sign in/up route
 app.use('/api/v1', signRoute);
+
+
+// swagger route
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // to test if app is running

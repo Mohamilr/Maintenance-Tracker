@@ -2,6 +2,10 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 
 import app from '../index';
+
+// import generated token from sign.test.js
+import token from './sign.test';
+
 chai.use(chaiHttp);
 chai.should();
 
@@ -10,8 +14,9 @@ describe('GET allRequests for admin', () => {
     it('should return all requests', (done) => {
         chai.request(app)
         .get('/api/v1/requests/')
+        .set('authorization', token)
         .end((err, res) => {
-            res.should.have.status(200);
+          res.should.have.status(200);
             res.body.should.be.a('object');
             done();
         })
@@ -23,9 +28,10 @@ describe('All PUT endpoint', () => {
     //test to approve a request
     describe('PUT approve a request', () => {
         it('should approve a request when called', (done) => {
-            const id = 1;
+            const id = 12;
             chai.request(app)
             .put(`/api/v1/requests/${id}/approve`)
+            .set('authorization', token)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
@@ -41,6 +47,7 @@ describe('All PUT endpoint', () => {
             const id = 2;
             chai.request(app)
             .put(`/api/v1/requests/${id}/disapprove`)
+            .set('authorization', token)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
@@ -56,6 +63,7 @@ describe('All PUT endpoint', () => {
             const id = 3;
             chai.request(app)
             .put(`/api/v1/requests/${id}/resolve`)
+            .set('authorization', token)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
