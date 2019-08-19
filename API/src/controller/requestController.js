@@ -17,22 +17,24 @@ const RequestController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
+         res.status(200).json({
+          message: 'all requests',
+          count: requests.rows.length,
+          requests: requests.rows
+        });
+        
         if (err) {
           res.sendStatus(401)
           console.log('error')
         }
-        else {
+        
           // if the there are no request in the database
           if (!requests.rows.length) {
             res.status(404).json({ message: 'no request available in the database' });
           }
           // all requests
-          return res.status(200).json({
-            message: 'all requests',
-            count: requests.rows.length,
-            requests: requests.rows
-          });
-        }
+          
+        
       })
     }
     catch (err) {
@@ -43,7 +45,7 @@ const RequestController = {
   async getsingleRequest(req, res) {
     // number to target a request
     const id = parseInt(req.params.id);
-    const { userId } = req.body; 
+    const { userId } = req.body;
 
     try {
       // query to get a single request from the database
@@ -54,19 +56,21 @@ const RequestController = {
 
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
+         // return single request
+         return res.status(200).json({
+          request: request.rows[0]
+        });
+        
         if (err) {
           res.sendStatus(401);
         }
-        else {
+        
           // an error message if the id is not present
           if (!request.rows.length) {
             res.status(404).json({ message: `request with id ${id} is not present in the database` });
           }
-          // return single request
-          return res.status(200).json({
-            request: request.rows[0]
-          });
-        }
+         
+        
       })
     }
     catch (err) {
@@ -87,21 +91,23 @@ const RequestController = {
 
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, dara) => {
+
+        // response to the post request
+        res.status(201).json({
+          message: "request added successfully",
+          request: newRequest.rows
+        })
+        // if token not provided
         if (err) {
           res.sendStatus(401);
         }
-        else {
-          // if a body value is not present
-          if (!faultyItem || !itemType || !complaint) {
-            res.status(400).json({
-              message: "input all body"
-            })
-          }
-          // response to the post request
-          return res.status(200).json({
-            request: newRequest.rows
+        // if a body value is not present
+        if (!faultyItem || !itemType || !complaint) {
+          res.status(400).json({
+            message: "input all body"
           })
         }
+
       })
     }
     catch (err) {
@@ -110,7 +116,7 @@ const RequestController = {
   },
   // update or modify a request
   async modifyARequest(req, res) {
-      // number to target a request
+    // number to target a request
     const id = parseInt(req.params.id);
 
     try {
@@ -138,30 +144,30 @@ const RequestController = {
       const values = [faultyItem, itemType, new Date(), complaint, id];
       const updatedRequest = await pool.query(updateQuery, values);
 
-    console.log(selectedRequest.status);
-    // protect enpoint response
-    jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
-      if (err) {
-        res.sendStatus(401);
-      }
-      else {
-         // if the queried request is not present
-      if (!updatedRequest.rows.length) {
-        res.status(400).json({
-          message: `request with id ${id} is not present in the database`
-        })
-      }
-      if(selectedRequest.status !== 'Undetermined'){
-        res.status(403).json({
-          message: 'sorry, you can no longer update this request'
-        })
-      }
-        return  res.status(200).json({
+      // protect enpoint response
+      jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
+
+        res.status(200).json({
           message: 'request updated successfully',
           updatedRequest: updatedRequest.rows[0]
         });
-      }
-    })
+
+        if (err) {
+          res.sendStatus(401);
+        }
+        // if the queried request is not present
+        if (!updatedRequest.rows.length) {
+          res.status(404).json({
+            message: `request with id ${id} is not present in the database`
+          })
+        }
+        if (selectedRequest.status !== 'Undetermined') {
+          res.status(403).json({
+            message: 'sorry, you can no longer update this request'
+          })
+        }
+
+      })
     }
     catch (err) {
       console.log(err);

@@ -1,0 +1,585 @@
+{
+	"swagger": "2.0",
+	"info": {
+	  "version": "1.0",
+	  "title": "maintainance tracker api",
+	  "description": "api for the maintanance tracker app",
+	  "contact": {
+		  "email": "ibrahimdamy7@gmail.com"
+	  }
+	},
+	"host": "localhost:3000",
+	"basePath": "/api/v1",
+	"securityDefinitions": {},
+	"schemes": [
+	  "http"
+	],
+	"consumes": [
+	  "application/json"
+	],
+	"produces": [
+	  "application/json"
+	],
+	"paths": {
+	  "/auth/signup": {
+		"post": {
+		  "description": "to sign up new users",
+		  "summary": "signup",
+		  "tags": [
+			"users"
+		  ],
+		  "operationId": "AuthSignupPost",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/signuprequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "user signed up successfully",
+			  "headers": {}
+			},
+			"400": {
+			  "description": "username already exist",
+		      "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/auth/login": {
+		"post": {
+		  "description": "login users",
+		  "summary": "login",
+		  "tags": [
+			"users"
+		  ],
+		  "operationId": "AuthLoginPost",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/loginrequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "user loged in successfully",
+			  "headers": {}
+			},
+			"403": {
+			  "description": "incorrect username or password",
+		      "headers": {}
+			},
+			"404": {
+				"deacription": "incorrect username. please try again or signup if you haven't",
+                "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/requests": {
+		"get": {
+		  "description": "gets all available requests for the admin user",
+		  "summary": "get all requests",
+		  "tags": [
+			"admin"
+		  ],
+		  "operationId": "RequestsGet",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "all requests",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			  }
+		  }
+		}
+	  },
+	  "/requests/15/approve": {
+		"put": {
+		  "description": "enables admin to approve requests",
+		  "summary": "approve request",
+		  "tags": [
+			"admin"
+		  ],
+		  "operationId": "Requests15ApprovePut",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "request Approved successfully",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "request with id not found",
+				"headers": {}
+			}
+		  }
+		}
+	  },
+	  "/requests/15/disapprove": {
+		"put": {
+		  "description": "enables admin to disapprove requests",
+		  "summary": "disapprove request",
+		  "tags": [
+			"admin"
+		  ],
+		  "operationId": "Requests15DisapprovePut",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "request Disapproved successfully",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "request with id not found",
+				"headers": {}
+			}
+		  }
+		}
+	  },
+	  "/requests/15/resolve": {
+		"put": {
+		  "description": "enables admin to resolve requests",
+		  "summary": "resolve request",
+		  "tags": [
+			"admin"
+		  ],
+		  "operationId": "Requests15ResolvePut",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "request resolved successfully",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "request with id not found",
+				"headers": {}
+			}
+		  }
+		}
+	  },
+	  "/users/requests": {
+		"post": {
+		  "description": "enables users to add requests",
+		  "summary": "add a request",
+		  "tags": [
+			"request"
+		  ],
+		  "operationId": "UsersRequestsPost",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/addarequestrequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"201": {
+			  "description": "request added successfully",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"400": {
+				"description": "input all body",
+				"headers": {}
+			}
+		  }
+		},
+		"get": {
+		  "description": "get requests for a loged in user",
+		  "summary": "get requests",
+		  "tags": [
+			"request"
+		  ],
+		  "operationId": "UsersRequestsGet",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "all requests",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "no request available in the database",
+				"headers": {}
+			}
+		  }
+		}
+	  },
+	  "/users/requests/25": {
+		"put": {
+		  "description": "enables users to update requests",
+		  "summary": "update requests",
+		  "tags": [
+			"request"
+		  ],
+		  "operationId": "UsersRequests25Put",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/updaterequestsrequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "request updated successfully",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "request with id not found",
+				"headers": {}
+			},
+			"403": {
+				"description": "sorry, you can no longer update this request",
+				"headers": {}
+			}
+		  }
+		}
+	  },
+	  "/users/requests/11": {
+		"get": {
+		  "description": "gets a single request for a loged in user",
+		  "summary": "get a single request",
+		  "tags": [
+			"request"
+		  ],
+		  "operationId": "UsersRequests11Get",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			},
+			"401": {
+				"description": "unauthorized",
+				"headers": {}
+			},
+			"404": {
+				"description": "request with id not found",
+				"headers": {}
+			}
+		  }
+		}
+	  }
+	},
+	"definitions": {
+	  "signuprequest": {
+		"title": "signuprequest",
+		"example": {
+		  "username": "mohammc",
+		  "password": "mohanuhu"
+		},
+		"type": "object",
+		"properties": {
+		  "username": {
+			"type": "string"
+		  },
+		  "password": {
+			"type": "string"
+		  }
+		},
+		"required": [
+		  "username",
+		  "password"
+		]
+	  },
+	  "loginrequest": {
+		"title": "loginrequest",
+		"example": {
+		  "username": "moham",
+		  "password": "mohanuhu"
+		},
+		"type": "object",
+		"properties": {
+		  "username": {
+			"type": "string"
+		  },
+		  "password": {
+			"type": "string"
+		  }
+		},
+		"required": [
+		  "username",
+		  "password"
+		]
+	  },
+	  "addarequestrequest": {
+		"title": "addarequestrequest",
+		"example": {
+		  "faultyItem": "photksocmk mck ",
+		  "itemType": "i pammmdfjjf cl",
+		  "complaint": " the batter  jy",
+		  "userId": 26
+		},
+		"type": "object",
+		"properties": {
+		  "faultyItem": {
+			"type": "string"
+		  },
+		  "itemType": {
+			"type": "string"
+		  },
+		  "complaint": {
+			"type": "string"
+		  },
+		  "userId": {
+			"type": "integer",
+			"format": "int32"
+		  }
+		},
+		"required": [
+		  "faultyItem",
+		  "itemType",
+		  "complaint",
+		  "userId"
+		]
+	  },
+	  "updaterequestsrequest": {
+		"title": "updaterequestsrequest",
+		"example": {
+		  "faultyItem": "photksocmk mck ",
+		  "itemType": "i pammmdfjjf cl",
+		  "complaint": " the batter  jy",
+		  "userId": 28
+		},
+		"type": "object",
+		"properties": {
+		  "faultyItem": {
+			"type": "string"
+		  },
+		  "itemType": {
+			"type": "string"
+		  },
+		  "complaint": {
+			"type": "string"
+		  },
+		  "userId": {
+			"type": "integer",
+			"format": "int32"
+		  }
+		},
+		"required": [
+		  "faultyItem",
+		  "itemType",
+		  "complaint",
+		  "userId"
+		]
+	  }
+	},
+	"tags": [
+		{
+		  "name": "users",
+		  "description": "This collection of API signup and log in users"
+		},
+		{
+			"name": "request",
+			"description": "This collection of API allows users to create, edit and get requests"
+		},
+		{
+		  "name": "admin",
+		  "description": "This API enables the admin to oversee and have access to all activities on the app"
+		}
+	]
+  }
