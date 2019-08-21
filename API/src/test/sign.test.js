@@ -11,7 +11,7 @@ let token = null;
 describe('POST signup', () => {
   it('signup a new user', (done) => {
     const newUser = {
-      username: "username",
+      username: "username12",
       password: "password"
     }
 
@@ -21,7 +21,7 @@ describe('POST signup', () => {
       .end((err, res) => {
         res.should.have.status(200);
         token = res.body.token;
-        done()
+        done(err)
       })
   })
 })

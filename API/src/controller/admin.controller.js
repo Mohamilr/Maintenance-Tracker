@@ -12,21 +12,22 @@ const adminController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.ADMIN_SECRETKEY, (err, data) => {
-        res.status(200).json({
+
+        if (err) {
+          res.sendStatus(401);
+          console.log("error");
+        }
+        if (!requests.rows.length) {
+          res.status(404).json({ 
+            message: "no request available in the database" 
+          });
+        }
+
+        return res.status(200).json({
           message: "all requests",
           count: requests.rows.length,
           requests: requests.rows
         });
-
-        if (err) {
-          res.sendStatus(403);
-          console.log("error");
-        }
-        if (!requests.rows.length) {
-          res
-            .status(404)
-            .json({ message: "no request available in the database" });
-        }
       });
     } catch (err) {
       console.log(err);
@@ -52,10 +53,7 @@ const adminController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.ADMIN_SECRETKEY, (err, data) => {
-        res.status(200).json({
-          message: "request Approved successfully",
-          approvedRequest: selectedRequest.rows[0]
-        });
+        
 
         if (err) {
           res.sendStatus(401);
@@ -67,6 +65,11 @@ const adminController = {
             message: `request with id ${id} not`
           });
         }
+
+        return res.status(200).json({
+          message: "request Approved successfully",
+          approvedRequest: selectedRequest.rows[0]
+        });
       });
     } catch (err) {
       console.log(err);
@@ -92,10 +95,7 @@ const adminController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.ADMIN_SECRETKEY, (err, data) => {
-        res.status(200).json({
-          message: "request Disapproved successfully",
-          disapprovedRequest: selectedRequest.rows[0]
-        });
+        
 
         // if token not provided
         if (err) {
@@ -108,6 +108,11 @@ const adminController = {
             message: `request with id ${id} is not present in the database`
           });
         }
+
+        return res.status(200).json({
+          message: "request Disapproved successfully",
+          disapprovedRequest: selectedRequest.rows[0]
+        });
       });
     } catch (err) {
       console.log(err);
@@ -132,10 +137,7 @@ const adminController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.ADMIN_SECRETKEY, (err, data) => {
-        res.status(200).json({
-          message: "request resolved successfully",
-          resolvedRequest: selectedRequest.rows[0]
-        });
+        
 
         // if token not provided
         if (err) {
@@ -149,6 +151,11 @@ const adminController = {
             message: `request with id ${id} is not present in the database`
           });
         }
+
+        return res.status(200).json({
+          message: "request resolved successfully",
+          resolvedRequest: selectedRequest.rows[0]
+        });
       });
     } catch (err) {
       console.log(err);

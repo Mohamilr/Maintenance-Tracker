@@ -41,7 +41,7 @@ app.use('/api/v1', signRoute);
 
 
 // swagger route
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // to test if app is running

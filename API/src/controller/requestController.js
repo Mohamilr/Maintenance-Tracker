@@ -17,24 +17,29 @@ const RequestController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
-         res.status(200).json({
+        
+        // if token not provided
+        if (err) {
+          res.status(401).json({
+            message: "token not generated"
+          })
+          console.log('error')
+        }
+
+        //  if the there are no request in the database
+         if (!requests.rows.length) {
+          res.json({ 
+            status: 404,
+            message: 'no request available in the database' 
+          });
+        }
+
+        return res.status(200).json({
           message: 'all requests',
           count: requests.rows.length,
           requests: requests.rows
         });
-        
-        if (err) {
-          res.sendStatus(401)
-          console.log('error')
-        }
-        
-          // if the there are no request in the database
-          if (!requests.rows.length) {
-            res.status(404).json({ message: 'no request available in the database' });
-          }
-          // all requests
-          
-        
+ 
       })
     }
     catch (err) {
@@ -56,11 +61,7 @@ const RequestController = {
 
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
-         // return single request
-         return res.status(200).json({
-          request: request.rows[0]
-        });
-        
+        // if token not provided
         if (err) {
           res.sendStatus(401);
         }
@@ -70,6 +71,10 @@ const RequestController = {
             res.status(404).json({ message: `request with id ${id} is not present in the database` });
           }
          
+        // return single request
+        return res.status(200).json({
+          request: request.rows[0]
+        });
         
       })
     }
@@ -92,11 +97,6 @@ const RequestController = {
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, dara) => {
 
-        // response to the post request
-        res.status(201).json({
-          message: "request added successfully",
-          request: newRequest.rows
-        })
         // if token not provided
         if (err) {
           res.sendStatus(401);
@@ -108,6 +108,11 @@ const RequestController = {
           })
         }
 
+        // response to the post request
+        res.status(201).json({
+          message: "request added successfully",
+          request: newRequest.rows
+        })
       })
     }
     catch (err) {
@@ -147,26 +152,31 @@ const RequestController = {
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
 
-        res.status(200).json({
-          message: 'request updated successfully',
-          updatedRequest: updatedRequest.rows[0]
-        });
-
+        // if token not provided
         if (err) {
-          res.sendStatus(401);
+          res.status(401).json({
+            message: "token not generated"
+          })
+          console.log('error')
         }
+        
         // if the queried request is not present
         if (!updatedRequest.rows.length) {
           res.status(404).json({
             message: `request with id ${id} is not present in the database`
           })
         }
+        // if request has been approved by admin
         if (selectedRequest.status !== 'Undetermined') {
           res.status(403).json({
             message: 'sorry, you can no longer update this request'
           })
         }
 
+        return res.status(200).json({
+          message: 'request updated successfully',
+          updatedRequest: updatedRequest.rows[0]
+        });
       })
     }
     catch (err) {
