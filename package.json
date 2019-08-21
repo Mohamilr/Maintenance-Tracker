@@ -4,10 +4,10 @@
   "description": "api for a maintanance app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test --exit || true",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "createTable": "babel-node src/model/connect.database.js"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js"
   },
   "repository": {
     "type": "git",
