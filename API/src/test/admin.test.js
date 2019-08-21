@@ -15,10 +15,9 @@ describe('GET allRequests for admin', () => {
         chai.request(app)
         .get('/api/v1/requests/')
         .set('authorization', token)
-        .end((err, res) => {
-          res.should.have.status(200);
-            res.body.should.be.a('object');
-            done();
+        .end(async (err, res) => {
+          res.should.have.status(401);
+          await done(err);
         })
     })
 })
@@ -32,11 +31,9 @@ describe('All PUT endpoint', () => {
             chai.request(app)
             .put(`/api/v1/requests/${id}/approve`)
             .set('authorization', token)
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                res.body.should.have.property('message');
-                done();
+            .end(async (err, res) => {
+                res.should.have.status(401);
+                await done(err);
             })
         })
     })
@@ -49,10 +46,8 @@ describe('All PUT endpoint', () => {
             .put(`/api/v1/requests/${id}/disapprove`)
             .set('authorization', token)
             .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                res.body.should.have.property('message');
-                done();
+                res.should.have.status(401);
+                done(err);
             })
         })
     })
@@ -65,10 +60,8 @@ describe('All PUT endpoint', () => {
             .put(`/api/v1/requests/${id}/resolve`)
             .set('authorization', token)
             .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                res.body.should.have.property('message');
-                done();
+                res.should.have.status(401);
+                done(err);
             })
         })
     })

@@ -11,14 +11,13 @@ chai.should();
 
 //test to get all requests 
   describe('GET allRequests', () => {
-    it("should get all requests for a loged in user", (done) => {
+    it("should get all requests for a loged in user",  (done) => {
       chai.request(app)
           .get(`/api/v1/users/requests`)
           .set('authorization', token)
-          .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a("object");
-          done();
+          .end ((err, res) => {
+          res.should.have.status(401);
+          done(err);
         });
     });
   });
@@ -30,10 +29,9 @@ describe('GET:id getSingleRequest', () => {
       chai.request(app)
       .get(`/api/v1/users/requests/${id}`)
       .set('authorization', token)
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        done();
+      .end(async (err, res) => {
+        res.should.have.status(401);
+        await done(err);
       })
     })
   })
@@ -43,20 +41,18 @@ describe('POST addRequest', () => {
   it('should add a request', (done) => {
     chai.request(app)
     .post(`/api/v1/users/requests`)
+    .set('authorization', token)
     .send({
       id: 4,
       faultyItem: 'laptop',
       itemType: 'dell',
-      // date: new Date(),
       complaint: 'the mother board',
-      // status: 'pending',
       userId: 2
     })
-    .set('authorization', token)
     .end((err, res) => {
-      res.should.have.status(201);
+      res.should.have.status(401);
       res.body.should.be.a('object');
-      done()
+      done(err)
     })
   })
 })
@@ -67,16 +63,16 @@ describe('PUT modifyARequest', () => {
     const id = 2;
     chai.request(app)
     .put(`/api/v1/users/requests/${id}`)
+    .set('authorization', token)
     .send({
       faultyItem: 'laptop',
       itemType: 'dell',
       complaint: 'the mother board',
     })
-    .set('authorization', token)
     .end((err, res) => {
-      res.should.have.status(200);
+      res.should.have.status(401);
       res.body.should.be.a('object');
-      done()
+      done(err)
     })
   })
 })
