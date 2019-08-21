@@ -7,3 +7,6 @@ coverage/
 
 # environment variables
 .env
+
+#build
+build
