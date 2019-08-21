@@ -29,9 +29,9 @@ describe('GET:id getSingleRequest', () => {
       chai.request(app)
       .get(`/api/v1/users/requests/${id}`)
       .set('authorization', token)
-      .end(async (err, res) => {
+      .end((err, res) => {
         res.should.have.status(401);
-        await done(err);
+        done(err);
       })
     })
   })
