@@ -15,9 +15,9 @@ describe('GET allRequests for admin', () => {
         chai.request(app)
         .get('/api/v1/requests/')
         .set('authorization', token)
-        .end(async (err, res) => {
+        .end((err, res) => {
           res.should.have.status(401);
-          await done(err);
+          done(err);
         })
     })
 })
@@ -31,9 +31,9 @@ describe('All PUT endpoint', () => {
             chai.request(app)
             .put(`/api/v1/requests/${id}/approve`)
             .set('authorization', token)
-            .end(async (err, res) => {
+            .end((err, res) => {
                 res.should.have.status(401);
-                await done(err);
+                done(err);
             })
         })
     })
