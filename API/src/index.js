@@ -7,6 +7,13 @@ import bodyParser from 'body-parser';
 //imort dotenv
 import dotenv from 'dotenv';
 
+// import swagger-ui-express
+import swaggerUi from 'swagger-ui-express';
+
+
+// import cors
+import cors from 'cors';
+
 // request route
 import requestRoutes from './routes/requestRoutes';
 //admin route
@@ -14,17 +21,18 @@ import adminRoute from './routes/adminRoutes';
 //sign in/up route
 import signRoute from './routes/sign.route';
 
-// initialize express
-const app = express();
-
-//configure donenv
-dotenv.config();
-
-import swaggerUi from 'swagger-ui-express';
-
 // import swagger document
 import swaggerDocument from '../swagger.json';
 
+
+// initialize express
+const app = express();
+
+// configure donenv
+dotenv.config();
+
+// configure cors
+app.use(cors());
 
 // create port
 const PORT = process.env.PORT || 3000;
