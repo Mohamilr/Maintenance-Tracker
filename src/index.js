@@ -46,7 +46,7 @@ app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // to test if app is running
 app.get('/', (req, res) => {
-  res.json({ message: 'welcome to the request api v2' })
+  res.json({ message: 'welcome to the request api' })
 })
 
 //catch wrong route
