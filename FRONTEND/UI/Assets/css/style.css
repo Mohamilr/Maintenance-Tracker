@@ -363,7 +363,11 @@ button{
 /*style from review .search-container .search input .search-btn*/
 [tb-headers-admin] {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.req-status{
+    color: blue;
 }
 
 /*footer*/
@@ -455,7 +459,7 @@ button{
 
     /* dashboard user style   */
     [complaint] {
-       margin: 10px 1em;
+       margin: 10px 0;
     }
     
     .the-modal{

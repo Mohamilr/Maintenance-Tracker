@@ -470,8 +470,8 @@
 	  "signuprequest": {
 		"title": "signuprequest",
 		"example": {
-		  "username": "mohammc",
-		  "password": "mohanuhu"
+		  "username": "codenija",
+		  "password": "moha7nuhu"
 		},
 		"type": "object",
 		"properties": {
@@ -510,9 +510,9 @@
 	  "addarequestrequest": {
 		"title": "addarequestrequest",
 		"example": {
-		  "faultyItem": "photksocmk mck ",
-		  "itemType": "i pammmdfjjf cl",
-		  "complaint": " the batter  jy",
+		  "faultyItem": "laptop",
+		  "itemType": "dell",
+		  "complaint": " the battery",
 		  "userId": 26
 		},
 		"type": "object",
@@ -541,10 +541,9 @@
 	  "updaterequestsrequest": {
 		"title": "updaterequestsrequest",
 		"example": {
-		  "faultyItem": "photksocmk mck ",
-		  "itemType": "i pammmdfjjf cl",
-		  "complaint": " the batter  jy",
-		  "userId": 28
+		  "faultyItem": "washing machine",
+		  "itemType": "LG",
+		  "complaint": "the power button"
 		},
 		"type": "object",
 		"properties": {
