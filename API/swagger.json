@@ -318,7 +318,9 @@
 				"headers": {}
 			}
 		  }
-		},
+		}
+	    },
+		"/users/requests/2/all": {
 		"get": {
 		  "description": "get requests for a loged in user",
 		  "summary": "get requests",
@@ -344,15 +346,6 @@
 			  "required": true,
 			  "type": "string",
 			  "description": ""
-			},
-			{
-			  "name": "userId",
-			  "in": "body",
-		      "required": true,
-		      "description": "",
-			  "schema": {
-				  "$ref": "#/definitions/userId"
-			    }
 			}
 		  ],
 		  "responses": {
@@ -370,7 +363,7 @@
 			}
 		  }
 		}
-	  },
+	    },
 	  "/users/requests/11": {
 		"get": {
 		  "description": "gets a single request for a loged in user",
@@ -397,15 +390,6 @@
 			  "required": true,
 			  "type": "string",
 			  "description": ""
-			},
-			{
-			  "name": "userId",
-			  "in": "body",
-			  "required": true,
-			  "description": "",
-			  "schema": {
-					"$ref": "#/definitions/userId"
-		        }
 			}
 		  ],
 		  "responses": {
@@ -582,22 +566,6 @@
 		  "faultyItem",
 		  "itemType",
 		  "complaint",
-		  "userId"
-		]
-	  },
-	  "userId": {
-		"title": "userid",
-		"example": {
-		  "userId": 26
-		},
-		"type": "object",
-		"properties": {
-		  "userId": {
-			"type": "integer",
-			"format": "int32"
-		  }
-		},
-		"required": [
 		  "userId"
 		]
 	  }

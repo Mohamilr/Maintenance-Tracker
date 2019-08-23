@@ -6,7 +6,7 @@ import pool from '../model/connect.database';
 const RequestController = {
   // all requests for a loged in user
   async allRequest(req, res) {
-    const { userId } = req.body;
+    const userId  = parseInt(req.params.id);
 
     try {
       // query to get all requests in the database
@@ -23,7 +23,6 @@ const RequestController = {
           res.status(401).json({
             message: "token not generated"
           })
-          console.log('error')
         }
 
         //  if the there are no request in the database
@@ -49,21 +48,24 @@ const RequestController = {
   // a single request
   async getsingleRequest(req, res) {
     // number to target a request
+    // const userId  = parseInt(req.params.id, 10);
     const id = parseInt(req.params.id);
-    const { userId } = req.body;
+    
 
     try {
       // query to get a single request from the database
-      const requestQuery = `SELECT * FROM requests WHERE requestId=$1 AND userId=$2`;
-      const values = [id, userId];
-      const request = await pool.query(requestQuery, values);
+      const requestQuery = `SELECT * FROM requests WHERE requestId=$1`;
+      const value = [id];
+      const request = await pool.query(requestQuery, value);
 
 
       // protect enpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
         // if token not provided
         if (err) {
-          res.sendStatus(401);
+          res.status(401).json({
+            message: "token not generated"
+          })
         }
         
           // an error message if the id is not present
