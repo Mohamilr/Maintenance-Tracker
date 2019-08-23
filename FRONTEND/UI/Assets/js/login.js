@@ -55,7 +55,7 @@ logInButton.addEventListener('click', async (e) => {
     }
     else{
         // location
-        // window.location = './sign-up.html';
+        window.location = '../UI/logedin-admin/dashboard-admin.html';
     }
      
     
