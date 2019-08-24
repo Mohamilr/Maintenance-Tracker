@@ -8,7 +8,6 @@ cache:
   - "node_modules"
 
 before_script:
-  - cd API
   - npm install 
 
 after_succcess: npm run coverage
