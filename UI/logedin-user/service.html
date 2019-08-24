@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FIX IT</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <!--    favicon-->
+    <link rel="icon" type="image/x-icon" href="../Assets/images/fav2.jpg">
+    <!--    font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Cardo|Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="brand"><i class="fas fa-tools"></i><a href="./dashboard.html">FIX IT</a></span>
+            <ul class="main-ul">
+                <li><a href="">Username</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li class="active"><a href="./service.html">Service</a></li>
+                <li><a href="./acceptance-status.html">Acceptance status</a></li>
+                <li><a href="../sign-in.html">Log out</a></li>
+            </ul>
+            <i class="fas fa-bars" id="bar"></i>
+        </nav>
+    </header>
+    <main>
+        <section>
+                    <div class="notification">
+                        <p class="notify">Request created successfully, Please go to dashboard</p>
+                    </div>
+        </section>
+        <section>
+            <div class="box-container">
+                <div class="box">
+                    <h1 class="head">MAKE A SERVICE REQUEST</h1>
+                    <!--            icon-->
+                <div class="site-icon-sign">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <!--              -->
+                    <form action="">
+                        <label for="car">Faulty Item</label><br>
+                        <!--                           contact input style -->
+                        <input type="text" placeholder="car" class="input"><br>
+                        <label for="car">Item Type</label><br>
+                        <!--                           contact input style -->
+                        <input type="text" placeholder="example benz" class="input"><br>
+                        <textarea name="information" id="" cols="30" rows="5"
+                            placeholder="what did you notice" class="discription"></textarea><br>
+                        <button class="">Request Service</button>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <script src="../Assets/js/nav.js"></script>
+</body>
+
+</html>
