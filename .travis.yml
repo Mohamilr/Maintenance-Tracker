@@ -2,17 +2,16 @@ language: node_js
 
 node_js: 
   - "stable"
-
+  
 cache: 
   directories:
   - "node_modules"
 
 before_script:
   - cd API
-  - npm install coveralls nyc 
+  - npm install 
 
-script:
-  - npm run coverage
+after_succcess: npm run coverage
 
 notifications:
   - email: false
