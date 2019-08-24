@@ -24,7 +24,7 @@
                 <!--                <li><a href="">Username</a></li>-->
                 <li><a href="./dashboard-admin.html">Dashboard</a></li>
                 <li class="active"><a href="./review.html">Service review</a></li>
-                <li><a href="../sign-in.html">Log out</a></li>
+                <li><a href="../sign-in.html" class="logout">Log out</a></li>
             </ul>
             <i class="fas fa-bars" id="bar"></i>
         </nav>
@@ -32,9 +32,7 @@
     <main>
         <section>
         <div class="notification">
-            <p class="notify">Request Approved successfully</p> 
-            <p class="notify-red">Request Disapproved successfully</p> 
-            <p class="notify">Request Resolved successfully</p> 
+          <!-- notifications -->
         </div>
         </section>
         <section>
@@ -46,69 +44,12 @@
             </div>
         </section>
         <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Approve</button>
-                    <button class="btn-red">Disapprove</button>
-                </div>
-            </div>
+                <h1 class="head"></h1>
         </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Approve</button>
-                    <button class="btn-red">Disapprove</button>
-                </div>
-            </div>
+        <section class="contents">
+                <!-- fetched items -->
         </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Approve</button>
-                    <button class="btn-red">Disapprove</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Approve</button>
-                    <button class="btn-red">Disapprove</button>
-                </div>
-            </div>
-        </section>
+       <!--  -->
         <section>
             <h1 class="head">Accepted Requests</h1>
             <!--               filter-->
@@ -116,72 +57,13 @@
                 <input type="text" placeholder="search by faulty item" class="search-input">
             </div>
         </section>
-        <section>
-            <div db-container>
-                <div tb-headers-admin class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="yellow-req">Pending</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Resolve</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div tb-headers-admin class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="green-req">Resolved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Resolve</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div tb-headers-admin class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="yellow-req">Pending</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Resolve</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div tb-headers-admin class="bd-head">
-                    <p>Person</p>
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="green-req">Resolved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                    <button class="btn-green">Resolve</button>
-                </div>
-            </div>
+        <section class="approved-contents">
+                <!-- fetched items -->
         </section>
     </main>
     <script src="../Assets/js/nav.js"></script>
+    <!-- fetching from the api -->
+    <script src="../Assets/js/admin-rewiew.js"></script>
 </body>
 
 </html>

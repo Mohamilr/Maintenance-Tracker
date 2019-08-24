@@ -3,6 +3,8 @@ const parentTag = document.querySelector('.contents');
 
 // page discription tag
 const header = document.querySelector('.head');
+
+// generaten token
 const token = localStorage.getItem('token');
 
 // if(!token){
@@ -38,9 +40,9 @@ const getAllRequests = async () => {
        <p>${requests.itemtype}</p>
        <p>${date}</p>
        <p class="req-status">${requests.status}</p>
+       </div>
        <div complaint>
        <p>Complaint: ${requests.complaint}</p>
-       </div>
        </div>
      </div>`; 
   })
@@ -48,3 +50,8 @@ const getAllRequests = async () => {
 
 // callback to get all requests
 getAllRequests();
+
+// clears token on logout
+document.querySelector('.logout').addEventListener('click', () => {
+  localStorage.removeItem("token");
+})
