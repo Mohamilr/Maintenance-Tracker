@@ -25,21 +25,19 @@
                 <li class="active"><a href="./dashboard.html">Dashboard</a></li>
                 <li><a href="./service.html">Service</a></li>
                 <li><a href="./acceptance-status.html">Acceptance status</a></li>
-                <li><a href="../sign-in.html">Log out</a></li>
+                <li><a href="../sign-in.html" class="logout">Log out</a></li>
             </ul>
             <i class="fas fa-bars" id="bar"></i>
         </nav>
     </header>
     <main>
         <section>
-                <div class="notification">
-                    <p class="notify">Request updated successfully</p>
-                </div>
-        </section>
-        <section>
             <h1 class="head">ALL TIME REQUESTS</h1>
         </section>
-        <section>
+        <section class="contents">
+        <!-- fetched requests  -->
+        </section>
+        <!-- <section>
             <div db-container>
                 <div class="bd-head">
                     <p>Car</p>
@@ -153,7 +151,7 @@
                         cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--        modal section-->
         <section>
             <div class="the-modal">
@@ -176,6 +174,8 @@
     </main>
     <script src="../Assets/js/nav.js"></script>
     <script src="../Assets/js/modal.js"></script>
+    <!-- fetching from the api -->
+    <script src="../Assets/js/user-dashboard.js"></script>
 </body>
 
 </html>

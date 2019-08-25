@@ -30,6 +30,9 @@ logInButton.addEventListener('click', async (e) => {
     // save token in the local storage to be used for authorization
     localStorage.setItem('token', response.token)
 
+    // save userid in the localstorage
+    localStorage.setItem('userid', response.userId)
+
     // alert message
     const alertMessage = document.createElement('p');
     alertMessage.style.color = 'red';
@@ -55,7 +58,11 @@ logInButton.addEventListener('click', async (e) => {
     }
     else{
         // location
-        window.location = '../UI/logedin-admin/dashboard-admin.html';
+        // window.location = '../UI/logedin-admin/dashboard-admin.html';
+
+
+        // user dashboard link 
+        window.location = '../UI/logedin-user/dashboard.html';
     }
      
     
