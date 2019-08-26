@@ -17,6 +17,11 @@ const userId = localStorage.getItem('userid');
 const userName = localStorage.getItem('username');
 
 
+// modal for updating requests    
+const modal = document.querySelector('.the-modal');
+
+
+
 // gets all requests for admin function
 const getAllRequests = async () => {
 
@@ -29,7 +34,7 @@ const getAllRequests = async () => {
         .then(res => res.json())
         .catch(err => { console.log(err) })
 
-
+    console.log(response)
     // if there are no requests in the database
     if (response.message === 'no request available in the database') {
         header.textContent = 'NO REQUESTS AVAILABLE IN THE DATABASE';
@@ -46,19 +51,18 @@ const getAllRequests = async () => {
         <p>${requests.itemtype}</p>
         <p>${date}</p>
         <p class="req-status">${requests.status}</p>
+        <p>${requests.requestid}</p>
         </div>
        <div complaint>
        <p>Complaint: ${requests.complaint}</p>
-       <button class="btn-green" id="update">Update</button>
+       <button class="btn-green" id="update" onclick=localStorage.setItem('id',${requests.requestid})>Update</button>
        </div>
        </div>`;
-       
 
-   
-       // modal for updating requests    
-        const modal = document.querySelector('.the-modal');
-        const btn = document.querySelectorAll('#update');
-        const cancelModal = document.querySelector('.cancel-modal');
+
+       const btn = document.querySelectorAll('#update');
+       const cancelModal = document.querySelector('.cancel-modal');
+               
 
         // iterate over all btn(update-buttons)
         for (let i = 0; i < btn.length; i++) {
@@ -72,7 +76,6 @@ const getAllRequests = async () => {
             modal.style.display = 'none';
         })
     })
-
 }
 
 // callback to get all requests
@@ -81,10 +84,75 @@ getAllRequests();
 // display username
 username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
 
+
+// update input fields
+const faultyItem = document.querySelector('#faultyitem');
+const itemType = document.querySelector('#itemtype');
+const description = document.querySelector('.description');
+const userID = parseInt(userId, 10);
+
+// submit button
+const submitBtn = document.querySelector('.submit');
+
+// notification
+const notificationTag = document.querySelector('.notification')
+
+// function to mdify a request
+submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    // get the id of the selected request
+    const tag = localStorage.getItem('id')
+    const id = parseInt(tag, 10)
+
+
+    // body values
+    const body = {
+        faulty_item: faultyItem.value,
+        item_type: itemType.value,
+        complaint: description.value,
+        userId
+    }
+
+    const response = await fetch(`http://localhost:3000/api/v1/users/requests/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+        .then(res => res.json())
+        .catch(e => console.log(e))
+
+        // console.log(response)
+    modal.style.display = 'none';    
+    // create notification element    
+    const update = document.createElement('p');
+    update.classList.add('notify')
+
+    // 
+    if (response.message === 'sorry, you can no longer update this request') {
+        update.style.color = 'red';
+        update.textContent = 'Sorry, you can no longer update this request';
+    }
+    else {
+        update.textContent = 'Request Updated Successfully';
+    }
+    notificationTag.appendChild(update)
+
+    // reloads page after 1.5 sec
+    setTimeout(() => {
+    window.location = 'acceptance-status.html'
+    }, 1500)
+
+})
+
+
 // clears localStorage on logout
 document.querySelector('.logout').addEventListener('click', () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("username");
+    localStorage.removeItem('token');
+    localStorage.removeItem('userid');
+    localStorage.removeItem('username');
+    localStorage.removeItem('id');
 })
 

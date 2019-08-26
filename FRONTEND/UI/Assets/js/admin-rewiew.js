@@ -8,10 +8,6 @@ const approvedParentTag = document.querySelector('.approved-contents');
 const header = document.querySelector('.head');
 const token = localStorage.getItem('token');
 
-// if(!token){
-//   window.location.href = '../sign-in.html';
-// }
-
 
 // notification
 const notificationTag = document.querySelector('.notification')
@@ -31,7 +27,7 @@ const approveRequest = (id) => {
    // create notification element    
    const approved = document.createElement('p');
    approved.classList.add('notify')
-   approved.textContent = 'Request Approved successfully'
+   approved.textContent = 'Request Approved Successfully'
     
    notificationTag.appendChild(approved)
    
@@ -57,7 +53,7 @@ const disapproveRequest = (id) => {
     // create notification element    
     const disapproved = document.createElement('p');
     disapproved.classList.add('notify')
-    disapproved.textContent = 'Request Disapproved successfully'
+    disapproved.textContent = 'Request Disapproved Successfully'
      
     notificationTag.appendChild(disapproved)
     
@@ -82,7 +78,7 @@ const resolveRequest = (id) => {
     // create notification element    
     const resolved = document.createElement('p');
     resolved.classList.add('notify')
-    resolved.textContent = 'Request Resolved successfully'
+    resolved.textContent = 'Request Resolved Successfully'
      
     notificationTag.appendChild(resolved)
     
