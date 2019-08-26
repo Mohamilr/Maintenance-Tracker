@@ -32,6 +32,11 @@
     </header>
     <main>
         <section>
+            <div class="notification">
+                <!-- notifications -->
+            </div>
+        </section>
+        <section>
             <h1 class="head">ACCEPTANCE STATUS</h1>
         </section>
         <section class="contents">
@@ -46,13 +51,13 @@
                 <form action="">
                     <label for="car">Faulty Item</label><br>
                     <!--                           contact input style -->
-                    <input type="text" placeholder="car" class="input"><br>
+                    <input type="text" placeholder="car" maxlength="15" class="input" id="faultyitem"><br>
                     <label for="car">Item Type</label><br>
                     <!--                           contact input style -->
-                    <input type="text" placeholder="example benz" class="input"><br>
+                    <input type="text" placeholder="example benz" maxlength="15" class="input" id="itemtype"><br>
                     <textarea name="information" id="" cols="30" rows="5" placeholder="what did you notice"
                         class="description"></textarea><br>
-                    <button class="btn-green">Update Request</button>
+                    <button class="btn-green submit">Update Request</button>
                 </form>
             </div>
         </section>

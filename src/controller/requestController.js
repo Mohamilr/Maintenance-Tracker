@@ -140,11 +140,11 @@ const RequestController = {
 
       // the sigle request gotten from the above query
       const selectedRequest = request.rows[0];
-
+     
       // values from the body
-      const { faulty_item } = req.body || selectedRequest.faultyItem;
-      const { item_type } = req.body || selectedRequest.itemType;
-      const { complaint } = req.body || selectedRequest.complaint;
+      const faulty_item = req.body.faulty_item || selectedRequest.faultyitem;
+      const item_type = req.body.item_type || selectedRequest.itemtype;
+      const complaint = req.body.complaint || selectedRequest.complaint;
 
       // query to update a single request from the database
       const updateQuery = `UPDATE requests SET faultyItem=$1, itemType=$2, date=$3, complaint=$4 WHERE requestId=$5 RETURNING *`;
