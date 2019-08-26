@@ -21,11 +21,11 @@
         <nav>
             <span class="brand"><i class="fas fa-tools"></i><a href="./dashboard.html">FIX IT</a></span>
             <ul class="main-ul">
-                <li><a href="">Username</a></li>
+                <li><a href="" class="username">Username</a></li>
                 <li><a href="./dashboard.html">Dashboard</a></li>
                 <li class="active"><a href="./service.html">Service</a></li>
                 <li><a href="./acceptance-status.html">Acceptance status</a></li>
-                <li><a href="../sign-in.html">Log out</a></li>
+                <li><a href="../sign-in.html" class="logout">Log out</a></li>
             </ul>
             <i class="fas fa-bars" id="bar"></i>
         </nav>
@@ -33,7 +33,7 @@
     <main>
         <section>
                     <div class="notification">
-                        <p class="notify">Request created successfully, Please go to dashboard</p>
+                        <!-- <p class="notify">Request created successfully, Please go to dashboard</p> -->
                     </div>
         </section>
         <section>
@@ -48,13 +48,13 @@
                     <form action="">
                         <label for="car">Faulty Item</label><br>
                         <!--                           contact input style -->
-                        <input type="text" placeholder="car" class="input"><br>
+                        <input type="text" placeholder="car" class="input" id="faultyitem" maxlength="15"><br>
                         <label for="car">Item Type</label><br>
                         <!--                           contact input style -->
-                        <input type="text" placeholder="example benz" class="input"><br>
-                        <textarea name="information" id="" cols="30" rows="5"
-                            placeholder="what did you notice" class="discription"></textarea><br>
-                        <button class="">Request Service</button>
+                        <input type="text" placeholder="example benz" class="input" id="itemtype" maxlength="15"><br>
+                        <textarea name="information" cols="30" rows="5"
+                            placeholder="what did you notice" class="description"></textarea><br>
+                        <button class="submit">Request Service</button>
                     </form>
                 </div>
                 
@@ -62,6 +62,8 @@
         </section>
     </main>
     <script src="../Assets/js/nav.js"></script>
+    <!-- fetching from the api -->
+    <script src="../Assets/js//service.js"></script>
 </body>
 
 </html>

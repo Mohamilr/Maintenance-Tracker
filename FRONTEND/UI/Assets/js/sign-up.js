@@ -27,9 +27,17 @@ signUpButton.addEventListener('click', async (e) => {
     })
     .then(res => res.json())
     .catch(e => console.log(e))
+
+    console.log(response)
     
     // save token in the local storage to be used for authorization
     localStorage.setItem('token', response.token)
+
+    // save userid in the localstorage
+    localStorage.setItem('userid', response.user.userid)
+
+    // save username in the localstorage
+    localStorage.setItem('username', response.username)
 
     // alert message
     const alertMessage = document.createElement('p');
@@ -54,11 +62,16 @@ signUpButton.addEventListener('click', async (e) => {
             window.location = 'sign-up.html';
         }, 3000);   
     }
-    else{
-        // location
-        // window.location = './sign-in.html';
+    // logs into user dashboard page
+    if(response.message === 'user signed up successfully'){
+        // user dashboard link 
+        window.location = '../UI/logedin-user/dashboard.html';
     }
-     
+    // logs into admin dashboard page
+    else if(response.message === 'admin signed up successfully'){
+        // location
+    window.location = '../UI/logedin-admin/dashboard-admin.html';
+    }
     
     // empty input fields
     newUsername.value = '';

@@ -26,6 +26,7 @@ logInButton.addEventListener('click', async (e) => {
     })
     .then(res => res.json())
     .catch(e => console.log(e))
+    console.log(response)
 
     // save token in the local storage to be used for authorization
     localStorage.setItem('token', response.token)
@@ -59,15 +60,17 @@ logInButton.addEventListener('click', async (e) => {
             window.location = 'sign-in.html';
         }, 3000);   
     }
-    else{
-        // location
-        // window.location = '../UI/logedin-admin/dashboard-admin.html';
-
-
-        // user dashboard link 
-        window.location = '../UI/logedin-user/dashboard.html';
-    }
-     
+        // logs into user dashboard page
+        if(response.message === 'user loged in successfully'){
+            // user dashboard link 
+            window.location = '../UI/logedin-user/dashboard.html';
+        }
+        // logs into admin dashboard page
+        else if(response.message === 'admin loged in successfully'){
+            // location
+        window.location = '../UI/logedin-admin/dashboard-admin.html';
+        }
+    
     
     // empty input fields
     Username.value = '';
