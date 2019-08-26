@@ -1,3 +1,6 @@
+// username tag (a)
+const username = document.querySelector('.username');
+
 // parent tag (contents) on the admin dashboard page
 const parentTag = document.querySelector('.contents');
 
@@ -10,6 +13,8 @@ const token = localStorage.getItem('token');
 // get userid
 const userId = localStorage.getItem('userid');
 
+// get username
+const userName = localStorage.getItem('username');
 
 // gets all requests for admin function
 const getAllRequests = async () => {
@@ -45,6 +50,9 @@ const getAllRequests = async () => {
        <p>Complaint: ${requests.complaint}</p>
        </div>
      </div>`; 
+
+     // display username
+     username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;  
   })
 }
 

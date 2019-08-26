@@ -105,7 +105,8 @@ const authenticate = {
                     res.status(200).json({
                         message: 'user loged in successfully',
                         token,
-                        userId: user.rows[0].userid
+                        userId: user.rows[0].userid,
+                        username: user.rows[0].username
                     });
                 });
             }

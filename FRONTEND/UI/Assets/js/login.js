@@ -33,6 +33,9 @@ logInButton.addEventListener('click', async (e) => {
     // save userid in the localstorage
     localStorage.setItem('userid', response.userId)
 
+    // save username in the localstorage
+    localStorage.setItem('username', response.username)
+
     // alert message
     const alertMessage = document.createElement('p');
     alertMessage.style.color = 'red';

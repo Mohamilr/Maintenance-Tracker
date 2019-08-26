@@ -21,11 +21,11 @@
         <nav>
             <span class="brand"><i class="fas fa-tools"></i><a href="./dashboard.html">FIX IT</a></span>
             <ul class="main-ul">
-                <li><a href="">Username</a></li>
+                <li><a href="" class="username">Username</a></li>
                 <li><a href="./dashboard.html">Dashboard</a></li>
                 <li><a href="./service.html">Service</a></li>
                 <li class="active"><a href="./acceptance-status.html">Acceptance status</a></li>
-                <li><a href="../sign-in.html">Log out</a></li>
+                <li><a href="../sign-in.html" class="logout">Log out</a></li>
             </ul>
             <i class="fas fa-bars" id="bar"></i>
         </nav>
@@ -34,80 +34,32 @@
         <section>
             <h1 class="head">ACCEPTANCE STATUS</h1>
         </section>
-        <section>
-            <div db-container>
-                <!--             <div>-->
-                <div class="bd-head">
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="green-req">Approved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                </div>
-                <!--            </div>-->
-            </div>
+        <section class="contents">
+            <!-- fetched requests  -->
         </section>
+        <!--        modal section-->
         <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="red-req">Disapproved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="green-req">Approved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="red-req">Disapproved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div db-container>
-                <div class="bd-head">
-                    <p>Car</p>
-                    <p>Benz</p>
-                    <p>20/5/19</p>
-                    <p class="green-req">Approved</p>
-                </div>
-                <div complaint>
-                    <p>lorem dcdkc cicnokncec ecieicnsdlkc sidncdnc cdwndcknwdicne wewciwecnweince cwecweincenwc
-                        cecencienciwec eciencine klsmcksmcimdskmc sdlcmlmckldc dcdmlk</p>
-                </div>
+            <div class="the-modal">
+                <span class="cancel-modal">&times;</span>
+                <h1 class="head">Update Request</h1>
+                <!--              -->
+                <form action="">
+                    <label for="car">Faulty Item</label><br>
+                    <!--                           contact input style -->
+                    <input type="text" placeholder="car" class="input"><br>
+                    <label for="car">Item Type</label><br>
+                    <!--                           contact input style -->
+                    <input type="text" placeholder="example benz" class="input"><br>
+                    <textarea name="information" id="" cols="30" rows="5" placeholder="what did you notice"
+                        class="discription"></textarea><br>
+                    <button class="btn-green">Update Request</button>
+                </form>
             </div>
         </section>
     </main>
     <script src="../Assets/js/nav.js"></script>
+    <!-- fetching from the api -->
+    <script src="../Assets/js/user-acceptance-status.js"></script>
 </body>
 
 </html>
