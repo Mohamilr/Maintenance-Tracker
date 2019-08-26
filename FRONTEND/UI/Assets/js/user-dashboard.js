@@ -40,22 +40,35 @@ const getAllRequests = async () => {
     
     //  requests format
      parentTag.innerHTML += `<div db-container>
-       <div class="bd-head">
-       <p>${requests.faultyitem}</p>
-       <p>${requests.itemtype}</p>
-       <p>${date}</p>
-       <p class="req-status">${requests.status}</p>
-       </div>
+     <div tb-headers-admin class="bd-head">
+     <p>${requests.faultyitem}</p>
+     <p>${requests.itemtype}</p>
+     <p>${date}</p>
+     <p class="req-status">${requests.status}</p>
+     </div>
        <div complaint>
        <p>Complaint: ${requests.complaint}</p>
        </div>
      </div>`; 
 
-     // display username
-     username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;  
+    //  const status = document.querySelectorAll('.req-status');
+    //  status.forEach(status => {
+    //   if(requests.status === 'Undetermined' && requests.status === 'Disapproved'){
+    //     status.style.color = 'red';
+    //  }
+    //  else if(requests.status === 'Pending'){
+    //     status.style.color = '#f2e12c';
+    //  }
+    //  else if(requests.status === 'Resolved'){
+    //     status.style.color = '#30c252';
+    //  }
+    //  })
+     
+     
   })
 }
-
+// display username
+username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
 // callback to get all requests
 getAllRequests();
 
@@ -63,4 +76,5 @@ getAllRequests();
 document.querySelector('.logout').addEventListener('click', () => {
   localStorage.removeItem("token");
   localStorage.removeItem("userid");
+  localStorage.removeItem("username");
 })

@@ -61,7 +61,8 @@ const authenticate = {
                     return res.status(200).json({
                         message: 'user signed up successfully',
                         token,
-                        user: signed.rows[0]
+                        user: signed.rows[0],
+                        username: signed.rows[0].username
                     });
                 });
             }

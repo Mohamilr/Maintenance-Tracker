@@ -41,12 +41,12 @@ const getAllRequests = async () => {
 
         //  requests format
         parentTag.innerHTML += `<div db-container>
-       <div class="bd-head">
-       <p>${requests.faultyitem}</p>
-       <p>${requests.itemtype}</p>
-       <p>${date}</p>
-       <p class="req-status">${requests.status}</p>
-       </div>
+        <div tb-headers-admin class="bd-head">
+        <p>${requests.faultyitem}</p>
+        <p>${requests.itemtype}</p>
+        <p>${date}</p>
+        <p class="req-status">${requests.status}</p>
+        </div>
        <div complaint>
        <p>Complaint: ${requests.complaint}</p>
        <button class="btn-green" id="update">Update</button>
@@ -54,8 +54,6 @@ const getAllRequests = async () => {
        </div>`;
        
 
-       // display username
-       username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;  
    
        // modal for updating requests    
         const modal = document.querySelector('.the-modal');
@@ -79,6 +77,9 @@ const getAllRequests = async () => {
 
 // callback to get all requests
 getAllRequests();
+
+// display username
+username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
 
 // clears localStorage on logout
 document.querySelector('.logout').addEventListener('click', () => {

@@ -45,6 +45,20 @@ const getAllRequests = async () => {
        <p>Complaint: ${requests.complaint}</p>
        </div>
      </div>`; 
+
+     // give specific colors to status
+    //  const status = document.querySelectorAll('.req-status');
+    //  status.forEach(status => {
+    //   if(requests.status === 'Undetermined' || requests.status === 'Disapproved'){
+    //     status.style.color = 'red';
+    //  }
+    //  else if(requests.status === 'Pending'){
+    //     status.style.color = '#f2e12c';
+    //  }
+    //  else if(requests.status === 'Resolved'){
+    //     status.style.color = '#30c252';
+    //  }
+    //  })
   })
 }
 
