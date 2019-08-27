@@ -30,8 +30,6 @@ submitBtn.addEventListener('click', async (e) => {
     const user = localStorage.getItem('userid');
     const userId = parseInt(user, 10)
 
-
-
     const body = {
         faulty_item: faultyItem.value,
         item_type: itemType.value,
@@ -63,7 +61,7 @@ submitBtn.addEventListener('click', async (e) => {
    }
    notificationTag.appendChild(created)
    
-//    reloads page 1 sec after the function runs
+   //  reloads page 1 sec after the function runs
    setTimeout(() => {
     window.location = 'service.html';
    }, 1500);
@@ -74,8 +72,6 @@ submitBtn.addEventListener('click', async (e) => {
 })
 
   
-
-
 // clears localStorage on logout
 document.querySelector('.logout').addEventListener('click', () => {
     localStorage.removeItem("token");

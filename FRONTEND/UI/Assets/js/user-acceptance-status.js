@@ -7,7 +7,7 @@ const parentTag = document.querySelector('.contents');
 // page discription tag
 const header = document.querySelector('.head');
 
-// generaten token
+// get token
 const token = localStorage.getItem('token');
 
 // get userid
@@ -19,7 +19,6 @@ const userName = localStorage.getItem('username');
 
 // modal for updating requests    
 const modal = document.querySelector('.the-modal');
-
 
 
 // gets all requests for admin function
@@ -34,7 +33,6 @@ const getAllRequests = async () => {
         .then(res => res.json())
         .catch(err => { console.log(err) })
 
-    console.log(response)
     // if there are no requests in the database
     if (response.message === 'no request available in the database') {
         header.textContent = 'NO REQUESTS AVAILABLE IN THE DATABASE';
@@ -51,7 +49,6 @@ const getAllRequests = async () => {
         <p>${requests.itemtype}</p>
         <p>${date}</p>
         <p class="req-status">${requests.status}</p>
-        <p>${requests.requestid}</p>
         </div>
        <div complaint>
        <p>Complaint: ${requests.complaint}</p>
@@ -59,7 +56,7 @@ const getAllRequests = async () => {
        </div>
        </div>`;
 
-
+       // modal
        const btn = document.querySelectorAll('#update');
        const cancelModal = document.querySelector('.cancel-modal');
                
@@ -124,8 +121,9 @@ submitBtn.addEventListener('click', async (e) => {
         .then(res => res.json())
         .catch(e => console.log(e))
 
-        // console.log(response)
+        
     modal.style.display = 'none';    
+    
     // create notification element    
     const update = document.createElement('p');
     update.classList.add('notify')

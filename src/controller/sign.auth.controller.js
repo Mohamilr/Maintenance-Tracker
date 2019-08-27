@@ -62,6 +62,7 @@ const authenticate = {
                         message: 'user signed up successfully',
                         token,
                         user: signed.rows[0],
+                        userId: signed.rows[0].userid,
                         username: signed.rows[0].username
                     });
                 });

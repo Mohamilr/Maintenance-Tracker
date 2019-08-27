@@ -6,6 +6,8 @@ const approvedParentTag = document.querySelector('.approved-contents');
 
 // page discription tag
 const header = document.querySelector('.head');
+
+// get token
 const token = localStorage.getItem('token');
 
 
@@ -21,7 +23,6 @@ const approveRequest = (id) => {
     }
   })
     .then(res => res.json())
-    .then(resp => console.log(resp))
     .catch(e => console.log(e))
 
   // create notification element    
@@ -47,7 +48,6 @@ const disapproveRequest = (id) => {
     }
   })
     .then(res => res.json())
-    .then(resp => console.log(resp))
     .catch(e => console.log(e))
 
   // create notification element    
@@ -72,7 +72,6 @@ const resolveRequest = (id) => {
     }
   })
     .then(res => res.json())
-    .then(resp => console.log(resp))
     .catch(e => console.log(e))
 
   // create notification element    
@@ -100,7 +99,6 @@ const getAllRequests = async () => {
     }
   })
     .then(res => res.json())
-    //   .then(resp => console.log(resp))
     .catch(err => { console.log(err) })
 
 
@@ -127,8 +125,9 @@ const getAllRequests = async () => {
        <button class="btn-green" onclick=approveRequest(${requests.requestid})>Approve</button>
        <button class="btn-red" onclick=disapproveRequest(${requests.requestid})>Disapprove</button>
        </div>
-     </div>`;
+      </div>`;
 
+      // filter requests 
       // elements  
       const search = document.querySelector('.search-input');
 
@@ -165,8 +164,9 @@ const getAllRequests = async () => {
         <p>Complaint: ${requests.complaint}</p>
         <button class="btn-green" onclick=resolveRequest(${requests.requestid})>Resolve</button>
         </div>
-    </div>`;
+      </div>`;
 
+      // filter requests
       // elements  
       const search1 = document.querySelector('#approve-search');
 

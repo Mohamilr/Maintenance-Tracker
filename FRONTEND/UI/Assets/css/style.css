@@ -212,7 +212,6 @@ nav span i{
 .notify{
     background-color: lightgreen;
     padding: 5px;
-    height: 30px;
 }
 
 .box-container{
@@ -285,7 +284,6 @@ button{
 
 [complaint] .btn-green, .btn-red{
     align-self: center;
-    /* width: auto; */
 }
 
 .red-req {
@@ -432,7 +430,6 @@ button{
 
     .index-box{
         margin-bottom: 2em;
-/*        height: 10em;*/
     }
 
     .index-box h3{
