@@ -141,6 +141,13 @@ const RequestController = {
       // the sigle request gotten from the above query
       const selectedRequest = request.rows[0];
      
+      // if request has been approved by admin
+     if (selectedRequest.status !== 'Undetermined') {
+      return res.status(403).json({
+        message: 'sorry, you can no longer update this request'
+      })
+    }
+
       // values from the body
       const faulty_item = req.body.faulty_item || selectedRequest.faultyitem;
       const item_type = req.body.item_type || selectedRequest.itemtype;
@@ -166,12 +173,6 @@ const RequestController = {
         if (!updatedRequest.rows.length) {
           res.status(404).json({
             message: `request with id ${id} is not present in the database`
-          })
-        }
-        // if request has been approved by admin
-        if (selectedRequest.status !== 'Undetermined') {
-          res.status(403).json({
-            message: 'sorry, you can no longer update this request'
           })
         }
 
