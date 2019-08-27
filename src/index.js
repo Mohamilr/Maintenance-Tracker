@@ -25,20 +25,6 @@ import swaggerUi from 'swagger-ui-express';
 // import swagger document
 import swaggerDocument from '../swagger.json';
 
-// access to CORS (because of policy restriction)
-app.use((req, res, next) =>  {
-  // allow all routes
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // allow methods
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
-
-  // allow request headers
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-  next();
-});
-
 
 // create port
 const PORT = process.env.PORT || 3000;
