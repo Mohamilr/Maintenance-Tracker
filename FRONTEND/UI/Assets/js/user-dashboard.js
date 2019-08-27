@@ -7,7 +7,7 @@ const parentTag = document.querySelector('.contents');
 // page discription tag
 const header = document.querySelector('.head');
 
-// generaten token
+// get token
 const token = localStorage.getItem('token');
 
 // get userid
@@ -50,26 +50,13 @@ const getAllRequests = async () => {
        <p>Complaint: ${requests.complaint}</p>
        </div>
      </div>`; 
-
-    //  const status = document.querySelectorAll('.req-status');
-    //  status.forEach(status => {
-    //   if(requests.status === 'Undetermined' && requests.status === 'Disapproved'){
-    //     status.style.color = 'red';
-    //  }
-    //  else if(requests.status === 'Pending'){
-    //     status.style.color = '#f2e12c';
-    //  }
-    //  else if(requests.status === 'Resolved'){
-    //     status.style.color = '#30c252';
-    //  }
-    //  })
-     
-     
   })
 }
+
 // display username
 username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
-// callback to get all requests
+
+
 getAllRequests();
 
 // clears localStorage on logout

@@ -4,7 +4,7 @@ const parentTag = document.querySelector('.contents');
 // page discription tag
 const header = document.querySelector('.head');
 
-// generaten token
+// get token
 const token = localStorage.getItem('token');
 
 
@@ -45,6 +45,7 @@ const getAllRequests = async () => {
   })
 
 
+  // filter requests
   // elements  
   const search = document.querySelector('.search-input');
 

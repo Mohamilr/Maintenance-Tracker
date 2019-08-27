@@ -1,5 +1,5 @@
-const bar = document.getElementById("bar");
-const mainUl = document.getElementsByClassName("main-ul")[0];
+const bar = document.querySelector("#bar");
+const mainUl = document.querySelector(".main-ul");
 
 bar.addEventListener("click", () => {
   mainUl.classList.toggle("nav-toggle");

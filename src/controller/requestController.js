@@ -48,7 +48,6 @@ const RequestController = {
   // a single request
   async getsingleRequest(req, res) {
     // number to target a request
-    // const userId  = parseInt(req.params.id, 10);
     const id = parseInt(req.params.id);
     
 
