@@ -86,14 +86,14 @@ const RequestController = {
   },
   // post a request
   async addRequest(req, res) {
-    const { faultyItem, itemType, complaint, userId } = req.body;
+    const { faulty_item, item_type, complaint, userId } = req.body;
     const status = 'Undetermined';
 
     try {
       // query to post a request
       const requestQuery = `INSERT INTO requests (faultyItem, itemType, date, complaint, status, userId)
         VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
-      const values = [faultyItem, itemType, new Date(), complaint, status, userId];
+      const values = [faulty_item, item_type, new Date(), complaint, status, userId];
       const newRequest = await pool.query(requestQuery, values);
 
       // protect enpoint response
@@ -104,7 +104,7 @@ const RequestController = {
           res.sendStatus(401);
         }
         // if a body value is not present
-        if (!faultyItem || !itemType || !complaint) {
+        if (!faulty_item || !item_type || !complaint) {
           res.status(400).json({
             message: "input all body"
           })
@@ -140,15 +140,22 @@ const RequestController = {
 
       // the sigle request gotten from the above query
       const selectedRequest = request.rows[0];
+     
+      // if request has been approved by admin
+     if (selectedRequest.status !== 'Undetermined') {
+      return res.status(403).json({
+        message: 'sorry, you can no longer update this request'
+      })
+    }
 
       // values from the body
-      const { faultyItem } = req.body || selectedRequest.faultyItem;
-      const { itemType } = req.body || selectedRequest.itemType;
-      const { complaint } = req.body || selectedRequest.complaint;
+      const faulty_item = req.body.faulty_item || selectedRequest.faultyitem;
+      const item_type = req.body.item_type || selectedRequest.itemtype;
+      const complaint = req.body.complaint || selectedRequest.complaint;
 
       // query to update a single request from the database
       const updateQuery = `UPDATE requests SET faultyItem=$1, itemType=$2, date=$3, complaint=$4 WHERE requestId=$5 RETURNING *`;
-      const values = [faultyItem, itemType, new Date(), complaint, id];
+      const values = [faulty_item, item_type, new Date(), complaint, id];
       const updatedRequest = await pool.query(updateQuery, values);
 
       // protect enpoint response
@@ -166,12 +173,6 @@ const RequestController = {
         if (!updatedRequest.rows.length) {
           res.status(404).json({
             message: `request with id ${id} is not present in the database`
-          })
-        }
-        // if request has been approved by admin
-        if (selectedRequest.status !== 'Undetermined') {
-          res.status(403).json({
-            message: 'sorry, you can no longer update this request'
           })
         }
 
