@@ -40,7 +40,7 @@ const authenticate = {
                 const adminResult = await pool.query(signupQuery, values);
 
                 // generate admin token
-                jwt.sign({ username, password }, process.env.ADMIN_SECRETKEY, { expiresIn: '1h' }, (err, token) => {
+                jwt.sign({ username, password }, process.env.ADMIN_SECRETKEY, { expiresIn: '24h' }, (err, token) => {
                     res.status(200).json({
                         message: 'admin signed up successfully',
                         token,
@@ -57,7 +57,7 @@ const authenticate = {
 
 
                 // generate token
-                jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
+                jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '24h' }, (err, token) => {
                     return res.status(200).json({
                         message: 'user signed up successfully',
                         token,
@@ -92,7 +92,7 @@ const authenticate = {
 
             // admin login
             if (user.rows[0].username === process.env.ADMIN_USERNAME && isMatch) {
-                jwt.sign({ username, password }, process.env.ADMIN_SECRETKEY, { expiresIn: '1h' }, (err, token) => {
+                jwt.sign({ username, password }, process.env.ADMIN_SECRETKEY, { expiresIn: '24h' }, (err, token) => {
                     res.status(200).json({
                         message: 'admin loged in successfully',
                         token,
@@ -102,7 +102,7 @@ const authenticate = {
             }
             // users login 
             else if (isMatch) {
-                jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
+                jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '24h' }, (err, token) => {
                     res.status(200).json({
                         message: 'user loged in successfully',
                         token,
