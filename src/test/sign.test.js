@@ -21,8 +21,8 @@ describe('POST signup', () => {
       .end((err, res) => {
         res.should.have.status(200);
         token = res.body.token;
-        done();
       })
+      done();
   })
 })
 
@@ -38,8 +38,8 @@ describe('POST /auth/login', () => {
       .end((err, res) => {
         res.should.have.status(200);
         token = res.body.token;
-        done();
       });
+      done();
   }));
 })
 
