@@ -8,7 +8,7 @@
     "build-babel": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
     "start": "nodemon --exec babel-node src/index.js",
-    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test --exit || true",
+    "test": " nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill src/test --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
