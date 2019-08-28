@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 chai.should();
 
 //test to get all requests for admin
-describe('GET allRequests for admin', () => {
+describe.skip('GET allRequests for admin', () => {
     it('should return all requests', (done) => {
         chai.request(app)
         .get('/api/v1/requests/')
@@ -23,7 +23,7 @@ describe('GET allRequests for admin', () => {
 })
 
 //test for all put endpoints for admin
-describe('All PUT endpoint', () => {
+describe.skip('All PUT endpoint', () => {
     //test to approve a request
     describe('PUT approve a request', () => {
         it('should approve a request when called', (done) => {
@@ -39,7 +39,7 @@ describe('All PUT endpoint', () => {
     })
 
     //test to disapprove a request
-    describe('PUT disapprove a request', () => {
+    describe.skip('PUT disapprove a request', () => {
         it('should disapprove a request when called', (done) => {
             const id = 2;
             chai.request(app)
@@ -53,7 +53,7 @@ describe('All PUT endpoint', () => {
     })
 
     //test to resolve a request
-    describe('PUT resolve a request', () => {
+    describe.skip('PUT resolve a request', () => {
         it('should resolve a request when called', (done) => {
             const id = 3;
             chai.request(app)

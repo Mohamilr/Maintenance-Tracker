@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 chai.should();
 
 //test to get all requests 
-  describe('GET allRequests', () => {
+  describe.skip('GET allRequests', () => {
     it("should get all requests for a loged in user",  (done) => {
       chai.request(app)
           .get(`/api/v1/users/requests`)
@@ -23,7 +23,7 @@ chai.should();
   });
 
 //test if the requst with id is present
-describe('GET:id getSingleRequest', () => {
+describe.skip('GET:id getSingleRequest', () => {
     it('should get a single request by id', (done) => {
       const id = 1;
       chai.request(app)
@@ -37,7 +37,7 @@ describe('GET:id getSingleRequest', () => {
   })
 
 //test to add a request
-describe('POST addRequest', () => {
+describe.skip('POST addRequest', () => {
   it('should add a request', (done) => {
     chai.request(app)
     .post(`/api/v1/users/requests`)
@@ -58,7 +58,7 @@ describe('POST addRequest', () => {
 })
 
 //test to modify a request
-describe('PUT modifyARequest', () => {
+describe.skip('PUT modifyARequest', () => {
   it('should modify a request', (done) => {
     const id = 2;
     chai.request(app)
