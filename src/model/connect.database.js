@@ -18,6 +18,7 @@ pool.on('connect', () => {});
 
 //user table
 const createTable = async () => {
+    try{
     const tableQuery = `CREATE TABLE IF NOT EXISTS 
     users(
         userId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -25,7 +26,7 @@ const createTable = async () => {
         password VARCHAR(250) NOT NULL
     )`;
 
-    try{
+    
         await pool.query(tableQuery);
         console.log('users table created')
     } catch(error){
@@ -35,6 +36,7 @@ const createTable = async () => {
 
 //request table
 const createRequestTable = async () => {
+    try{
     const requestTableQuery = `CREATE TABLE IF NOT EXISTS
     requests(
         requestId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -46,7 +48,7 @@ const createRequestTable = async () => {
         userId INT NOT NULL,
         FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE
     )`;
-    try{
+    
         await pool.query(requestTableQuery);
         console.log('request table created');
     }
