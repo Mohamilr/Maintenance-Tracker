@@ -16,7 +16,7 @@ const notificationTag = document.querySelector('.notification')
 
 // function to approve requests
 const approveRequest = (id) => {
-  fetch(`http://localhost:3000/api/v1/requests/${id}/approve`, {
+  fetch(`https://fix-it-api.herokuapp.com/api/v1/requests/${id}/approve`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${token}`
@@ -41,7 +41,7 @@ const approveRequest = (id) => {
 
 // function to disapprove requests
 const disapproveRequest = (id) => {
-  fetch(`http://localhost:3000/api/v1/requests/${id}/disapprove`, {
+  fetch(`https://fix-it-api.herokuapp.com/api/v1/requests/${id}/disapprove`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${token}`
@@ -65,7 +65,7 @@ const disapproveRequest = (id) => {
 
 // function to disapprove requests
 const resolveRequest = (id) => {
-  fetch(`http://localhost:3000/api/v1/requests/${id}/resolve`, {
+  fetch(`https://fix-it-api.herokuapp.com/api/v1/requests/${id}/resolve`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${token}`
@@ -92,7 +92,7 @@ const resolveRequest = (id) => {
 // gets all requests for admin function
 const getAllRequests = async () => {
 
-  const response = await fetch('http://localhost:3000/api/v1/requests', {
+  const response = await fetch('https://fix-it-api.herokuapp.com/api/v1/requests', {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`

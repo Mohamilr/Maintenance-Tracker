@@ -11,7 +11,7 @@ const token = localStorage.getItem('token');
 // gets all requests for admin function
 const getAllRequests = async () => {
 
-  const response = await fetch('http://localhost:3000/api/v1/requests', {
+  const response = await fetch('https://fix-it-api.herokuapp.com/api/v1/requests', {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`

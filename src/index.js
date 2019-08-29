@@ -83,7 +83,7 @@ app.get('/', (req, res) => {
 
 //catch wrong route
 app.use('*', (req, res) => {
-  res.status(404).json({ message: 'Route Not Found' })
+  res.status(404).send('Wrong page', 404)
 })
 
 // start the express server
