@@ -54,7 +54,7 @@ const getAllRequests = async () => {
 }
 
 // display username
-username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
+username.innerHTML = '<i class="fas fa-user-circle"></i>' + ' ' + userName.toLocaleUpperCase();
 
 
 getAllRequests();
