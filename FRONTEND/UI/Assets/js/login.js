@@ -21,7 +21,7 @@ logInButton.addEventListener('click', async (e) => {
     }
 
     // fetch  using promise
-    const response = await fetch('https://fix-it-api.herokuapp.com/api/v1/auth/login', {
+    const response = await fetch('https://fix-it-api.herokuapp.com/auth/login', {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
