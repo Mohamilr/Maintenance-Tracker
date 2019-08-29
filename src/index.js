@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 // import cors 
 import cors from 'cors';
 
-//
+// path
 import path from 'path';
 
 
@@ -70,7 +70,7 @@ app.use('/api/v1', signRoute);
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-//
+// configure path to load html files
 const publicDir = path.join(__dirname, '../FRONTEND');
 
 app.use(express.static(publicDir));
