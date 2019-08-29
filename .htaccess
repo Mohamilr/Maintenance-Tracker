@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d 
-RewriteRule ^ ./FRONTEND/index.html  [L,R=301]
+RewriteRule ^ ./FRONTEND/index.html - [L,R=301]
