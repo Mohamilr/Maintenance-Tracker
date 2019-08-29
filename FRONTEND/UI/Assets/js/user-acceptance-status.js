@@ -79,7 +79,7 @@ const getAllRequests = async () => {
 getAllRequests();
 
 // display username
-username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
+username.innerHTML = '<i class="fas fa-user-circle"></i>' + ' ' + userName.toLocaleUpperCase();
 
 
 // update input fields

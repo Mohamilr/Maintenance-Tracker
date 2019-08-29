@@ -11,7 +11,7 @@ const token = localStorage.getItem('token');
 const userName = localStorage.getItem('username');
 
 // display username
-username.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
+username.innerHTML = '<i class="fas fa-user-circle"></i>' + ' ' + userName.toLocaleUpperCase();
 
 // notification
 const notificationTag = document.querySelector('.notification')
