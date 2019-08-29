@@ -10,6 +10,10 @@ import dotenv from 'dotenv';
 // import cors 
 import cors from 'cors';
 
+//
+import path from 'path';
+
+
 // import swagger ui
 import swaggerUi from 'swagger-ui-express';
 
@@ -64,6 +68,12 @@ app.use('/api/v1', signRoute);
 
 // swagger route
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+//
+const publicDir = path.join(__dirname, '../FRONTEND');
+
+app.use(express.static(publicDir));
 
 
 // to test if app is running
