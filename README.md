@@ -5,5 +5,26 @@
 Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of their request.
 
 
+### Prerequisites
+You need to have node.js installed [Node.js](https://nodejs.org/en/)
+
+
+### Installation
+Clone this repo and install all dependencies.
+
+* Use ```npm install``` to install all dependencies
+* ```npm run start``` to start the server  
+
+
+### Run tests
+* ```npm run test```
+
+## License
+This project is licensed under the MIT License 
+[LICENSE.md](LICENSE.md)
+
+
+
+
 #### Author
 Mohammed Ibrahim
