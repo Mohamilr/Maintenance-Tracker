@@ -21,10 +21,9 @@ Clone this repo and install all dependencies.
 
 ## License
 This project is licensed under the MIT License 
-[LICENSE.md](LICENSE.md)
 
 
 
 
-#### Author
+### Author
 Mohammed Ibrahim
