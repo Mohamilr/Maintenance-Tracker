@@ -58,7 +58,7 @@ const authenticate = {
 
                 // generate token
                 jwt.sign({ username, password }, process.env.SECRET_KEY, { expiresIn: '24h' }, (err, token) => {
-                    return res.status(200).json({
+                        res.status(200).json({
                         message: 'user signed up successfully',
                         token,
                         user: signed.rows[0],
