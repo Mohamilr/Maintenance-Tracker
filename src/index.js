@@ -37,7 +37,7 @@ dotenv.config();
 app.use(bodyParser.json({ extended: true }));
 
 // create port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // configure cors
 app.use(cors());
