@@ -45,19 +45,19 @@ const PORT = process.env.PORT || 3000;
 
 
 
-// app.use((req, res, next) => {
+app.use((req, res, next) => {
 
-//   // origin
-//   res.setHeader('Access-Control-Allow-Origin', '*');
+  // origin
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
-//   //  methods 
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  //  methods 
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-//   //  headers 
-//   res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
+  //  headers 
+  res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
 
-//   next();
-// });
+  next();
+});
 
 // configure path to load html files
 const frontendDir = path.join(__dirname, '../FRONTEND');
