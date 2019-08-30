@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const connectToDatabase = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER,
+    user: 'wfhmuqso',
+    password: 'F7PoagMr8GjC1SjR_nTufALUsfY7vdnc',
+    server: 'dumbo.db.elephantsql.com (dumbo-01)',
     port: process.env.DB_PORT,
-    database: process.env.DB_DATABASE
+    database: 'wfhmuqso'
 };
 
 const pool = new pg.Pool(connectToDatabase);

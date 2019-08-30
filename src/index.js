@@ -8,7 +8,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 // import cors 
-import cors from 'cors';
+// import cors from 'cors';
 
 // path
 import path from 'path';
@@ -34,7 +34,7 @@ const app = express();
 dotenv.config();
 
 // configure cors
-app.use(cors());
+// app.use(cors());
 
 
 // create port
@@ -72,16 +72,19 @@ app.use('/api/v1', signRoute);
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
+
+
+// to test if app is running
+app.get('/welcome', (req, res) => {
+  res.json({ message: 'welcome to the request api' })
+})
+
 // configure path to load html files
 const frontendDir = path.join(__dirname, '../FRONTEND');
 
 app.use(express.static(frontendDir));
 
 
-// to test if app is running
-app.get('/', (req, res) => {
-  res.json({ message: 'welcome to the request api' })
-})
 
 //catch wrong route
 app.use((req, res) => {
