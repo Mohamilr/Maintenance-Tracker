@@ -10,6 +10,13 @@ import dotenv from 'dotenv';
 // import cors 
 import cors from 'cors';
 
+// path
+import path from 'path';
+
+
+// import swagger ui
+import swaggerUi from 'swagger-ui-express';
+
 // request route
 import requestRoutes from './routes/requestRoutes';
 //admin route
@@ -17,38 +24,36 @@ import adminRoute from './routes/adminRoutes';
 //sign in/up route
 import signRoute from './routes/sign.route';
 
-// initialize express
-const app = express();
-
-//configure donenv
-dotenv.config();
-
-import swaggerUi from 'swagger-ui-express';
-
 // import swagger document
 import swaggerDocument from '../swagger.json';
 
+// initialize express
+const app = express();
 
-// create port
-const PORT = process.env.PORT || 3000;
+// configure donenv
+dotenv.config();
 
 // configure body-parser
 app.use(bodyParser.json({ extended: true }));
+
+// create port
+const PORT = process.env.PORT || 3000;
 
 // configure cors
 app.use(cors());
 
 
-// access to CORS (because of policy restriction)
-app.use((req, res, next) =>  {
-  // allow all routes
+
+app.use((req, res, next) => {
+
+  // origin
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  // allow methods
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+  //  methods 
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-  // allow request headers
-  res.setHeader('Access-Control-Request-Headers', 'Content-Type, Authorization');
+  // headers
+  res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
 
   next();
 });
@@ -72,8 +77,8 @@ app.get('/', (req, res) => {
 })
 
 //catch wrong route
-app.use('*', (req, res) => {
-  res.status(404).json({ message: 'Route Not Found' })
+app.use((req, res) => {
+  res.status(404).json({message: 'Route not found'})
 })
 
 // start the express server
