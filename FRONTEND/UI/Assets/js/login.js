@@ -1,3 +1,4 @@
+const baseUrl = 'https://fix-it-api.herokuapp.com';
 // for signin
 const logInButton = document.querySelector('.sign-in')
 
@@ -21,7 +22,7 @@ logInButton.addEventListener('click', async (e) => {
     }
 
     // fetch  using promise
-    const response = await fetch('fix-it-maintenance.herokuapp.com/api/v1/auth/login', {
+    const response = await fetch(`${baseUrl}/api/v1/auth/login`, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {

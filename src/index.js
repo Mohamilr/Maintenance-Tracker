@@ -52,11 +52,25 @@ app.use((req, res, next) =>  {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
 
   // allow request headers
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Request-Headers', 'Content-Type, Authorization');
 
   next();
 });
 
+
+// // access to CORS (because of policy restriction)
+// app.use((req, res, next) =>  {
+//   // allow all routes
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+
+//   // allow methods
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+
+//   // allow request headers
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+//   next();
+// });
 
 
 // configure routes
