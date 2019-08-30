@@ -73,9 +73,9 @@ app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // configure path to load html files
-const publicDir = path.join(__dirname, '../FRONTEND');
+const frontendDir = path.join(__dirname, '../FRONTEND');
 
-app.use(express.static(publicDir));
+app.use(express.static(frontendDir));
 
 
 // to test if app is running
