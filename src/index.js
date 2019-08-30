@@ -7,6 +7,9 @@ import bodyParser from 'body-parser';
 //imort dotenv
 import dotenv from 'dotenv';
 
+// import cors 
+import cors from 'cors';
+
 // request route
 import requestRoutes from './routes/requestRoutes';
 //admin route
@@ -31,6 +34,25 @@ const PORT = process.env.PORT || 3000;
 
 // configure body-parser
 app.use(bodyParser.json({ extended: true }));
+
+// configure cors
+app.use(cors());
+
+
+// access to CORS (because of policy restriction)
+app.use((req, res, next) =>  {
+  // allow all routes
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  // allow methods
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+
+  // allow request headers
+  res.setHeader('Access-Control-Request-Headers', 'Content-Type, Authorization');
+
+  next();
+});
+
 
 // configure routes
 app.use('/api/v1/', requestRoutes);
