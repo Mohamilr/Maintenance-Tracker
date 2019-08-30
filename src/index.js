@@ -30,6 +30,9 @@ import swaggerDocument from '../swagger.json';
 // initialize express
 const app = express();
 
+// configure cors
+app.use(cors());
+
 // configure donenv
 dotenv.config();
 
@@ -39,25 +42,27 @@ app.use(bodyParser.json({ extended: true }));
 // create port
 const PORT = process.env.PORT || 3000;
 
-// configure cors
-app.use(cors());
 
 
-app.use((req, res, next) => {
 
-  // origin
-  res.setHeader('Access-Control-Allow-Origin', '*');
+// app.use((req, res, next) => {
 
-  //  methods 
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//   // origin
+//   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  //  headers 
-  res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
+//   //  methods 
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-  next();
-});
+//   //  headers 
+//   res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
 
+//   next();
+// });
 
+// configure path to load html files
+const frontendDir = path.join(__dirname, '../FRONTEND');
+//
+app.use(express.static(frontendDir));
 
 
 // configure routes
@@ -72,13 +77,9 @@ app.use('/api/v1', signRoute);
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-// configure path to load html files
-const frontendDir = path.join(__dirname, '../FRONTEND');
-//
-app.use(express.static(frontendDir));
 
 // to test if app is running
-app.get('/', (req, res) => {
+app.get('/welcome', (req, res) => {
   res.json({ message: 'welcome to the request api' })
 })
 
@@ -86,8 +87,7 @@ app.get('/', (req, res) => {
 
 //catch wrong route
 app.use((req, res) => {
-  res.status(404)
-  res.render('/404.jade', {title : '404:  file not found'})
+  res.status(404).json({message : 'route not found'})
 })
 
 // start the express server

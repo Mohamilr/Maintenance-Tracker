@@ -1,4 +1,4 @@
-const baseUrl = 'https://fix-it-api.herokuapp.com';
+const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
 // parent tag (contents) on the admin dashboard page
 const parentTag = document.querySelector('.contents');
@@ -13,7 +13,7 @@ const token = localStorage.getItem('token');
 // gets all requests for admin function
 const getAllRequests = async () => {
 
-  const response = await fetch(`${baseUrl}/api/v1/requests`, {
+  const response = await fetch(`${baseUrl}/requests`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`

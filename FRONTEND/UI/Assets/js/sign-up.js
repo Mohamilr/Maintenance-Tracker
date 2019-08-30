@@ -1,4 +1,4 @@
-const baseUrl = 'https://fix-it-api.herokuapp.com';
+const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
 // for sign up
 // signup button
@@ -24,7 +24,7 @@ signUpButton.addEventListener('click', async (e) => {
     }
 
     // fetch  using promise
-    const response = await fetch(`${baseUrl}/api/v1/auth/signup`, {
+    const response = await fetch(`${baseUrl}/auth/signup`, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {

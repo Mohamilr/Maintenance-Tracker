@@ -1,4 +1,4 @@
-const baseUrl = 'https://fix-it-api.herokuapp.com';
+const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
 // username tag (a)
 const username = document.querySelector('.username');
@@ -39,7 +39,7 @@ submitBtn.addEventListener('click', async (e) => {
         userId
     }
 
-    const response = await fetch(`${baseUrl}/api/v1/users/requests`, {
+    const response = await fetch(`${baseUrl}/users/requests`, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
