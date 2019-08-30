@@ -7,9 +7,9 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "npm run build && node ./build/index.js",
     "test": " nyc mocha --require @babel/register --require @babel/polyfill src/test",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"  
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
