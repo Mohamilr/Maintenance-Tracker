@@ -37,10 +37,14 @@ dotenv.config();
 app.use(cors());
 
 
+// create port
+const PORT = process.env.PORT || 3000;
+
+
 // access to CORS (because of policy restriction)
 app.use((req, res, next) =>  {
   // allow all routes
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://fix-it-api.herokuapp.com');
 
   // allow methods
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
@@ -52,8 +56,6 @@ app.use((req, res, next) =>  {
 });
 
 
-// create port
-const PORT = process.env.PORT || 3000;
 
 // configure body-parser
 app.use(bodyParser.json({ extended: true }));
@@ -82,8 +84,9 @@ app.get('/', (req, res) => {
 })
 
 //catch wrong route
-app.use('*', (req, res) => {
-  res.status(404).send('Wrong page', 404)
+app.use((req, res) => {
+  res.status(404)
+  res.render('404.jade', {title : '404:  file not found'})
 })
 
 // start the express server
