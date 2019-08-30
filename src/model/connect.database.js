@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const connectToDatabase = {
-    user: 'wfhmuqso',
-    password: 'F7PoagMr8GjC1SjR_nTufALUsfY7vdnc',
-    server: 'dumbo.db.elephantsql.com (dumbo-01)',
+    user: process.env.DB_USER,
     port: process.env.DB_PORT,
-    database: 'wfhmuqso'
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 };
 
 const pool = new pg.Pool(connectToDatabase);
@@ -18,7 +18,7 @@ pool.on('connect', () => {});
 
 //user table
 const createTable = async () => {
-    try{
+  
     const tableQuery = `CREATE TABLE IF NOT EXISTS 
     users(
         userId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -26,7 +26,7 @@ const createTable = async () => {
         password VARCHAR(250) NOT NULL
     )`;
 
-    
+    try{
         await pool.query(tableQuery);
         console.log('users table created')
     } catch(error){
@@ -36,7 +36,7 @@ const createTable = async () => {
 
 //request table
 const createRequestTable = async () => {
-    try{
+    
     const requestTableQuery = `CREATE TABLE IF NOT EXISTS
     requests(
         requestId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -48,7 +48,8 @@ const createRequestTable = async () => {
         userId INT NOT NULL,
         FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE
     )`;
-    
+
+    try{
         await pool.query(requestTableQuery);
         console.log('request table created');
     }

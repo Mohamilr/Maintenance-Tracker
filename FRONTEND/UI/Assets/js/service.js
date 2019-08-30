@@ -37,7 +37,7 @@ submitBtn.addEventListener('click', async (e) => {
         userId
     }
 
-    const response = await fetch('https://fix-it-api.herokuapp.com/api/v1/users/requests', {
+    const response = await fetch('http://localhost:3000/api/v1/users/requests', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {

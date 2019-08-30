@@ -8,7 +8,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 // import cors 
-// import cors from 'cors';
+import cors from 'cors';
 
 // path
 import path from 'path';
@@ -33,18 +33,20 @@ const app = express();
 // configure donenv
 dotenv.config();
 
-// configure cors
-// app.use(cors());
-
+// configure body-parser
+app.use(bodyParser.json({ extended: true }));
 
 // create port
 const PORT = process.env.PORT || 3000;
+
+// configure cors
+app.use(cors());
 
 
 // access to CORS (because of policy restriction)
 app.use((req, res, next) =>  {
   // allow all routes
-  res.setHeader('Access-Control-Allow-Origin', 'https://fix-it-api.herokuapp.com');
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   // allow methods
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
@@ -56,9 +58,6 @@ app.use((req, res, next) =>  {
 });
 
 
-
-// configure body-parser
-app.use(bodyParser.json({ extended: true }));
 
 // configure routes
 app.use('/api/v1/', requestRoutes);
@@ -72,24 +71,22 @@ app.use('/api/v1', signRoute);
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-
-
-// to test if app is running
-app.get('/welcome', (req, res) => {
-  res.json({ message: 'welcome to the request api' })
-})
-
 // configure path to load html files
 const frontendDir = path.join(__dirname, '../FRONTEND');
-
+//
 app.use(express.static(frontendDir));
+
+// to test if app is running
+app.get('/', (req, res) => {
+  res.json({ message: 'welcome to the request api' })
+})
 
 
 
 //catch wrong route
 app.use((req, res) => {
   res.status(404)
-  res.render('404.jade', {title : '404:  file not found'})
+  res.render('../FRONTEND/404.jade', {title : '404:  file not found'})
 })
 
 // start the express server

@@ -22,7 +22,7 @@ signUpButton.addEventListener('click', async (e) => {
     }
 
     // fetch  using promise
-    const response = await fetch('https://fix-it-api.herokuapp.com/api/v1/auth/signup', {
+    const response = await fetch('http://localhost:3000/api/v1/auth/signup', {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
