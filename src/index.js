@@ -37,7 +37,7 @@ dotenv.config();
 app.use(bodyParser.json({ extended: true }));
 
 // create port
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // configure cors
 app.use(cors());
@@ -86,7 +86,7 @@ app.get('/', (req, res) => {
 //catch wrong route
 app.use((req, res) => {
   res.status(404)
-  res.render('../FRONTEND/404.jade', {title : '404:  file not found'})
+  res.render('/404.jade', {title : '404:  file not found'})
 })
 
 // start the express server
