@@ -1,3 +1,5 @@
+const baseUrl = 'https://fix-it-api.herokuapp.com';
+
 // username tag (a)
 const username = document.querySelector('.username');
 
@@ -19,7 +21,7 @@ const userName = localStorage.getItem('username');
 // gets all requests for admin function
 const getAllRequests = async () => {
 
-   const response = await fetch(`http://localhost:3000/api/v1/users/requests/${userId}/all`, {
+   const response = await fetch(`${baseUrl}/api/v1/users/requests/${userId}/all`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`
