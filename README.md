@@ -19,6 +19,9 @@ Clone this repo and install all dependencies.
 ### Run tests
 * ```npm run test```
 
+## Hosted on
+[fix-it-maintenance](http://fix-it-maintenance.herokuapp.com)
+
 ## License
 This project is licensed under the MIT License 
 
