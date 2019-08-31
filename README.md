@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Mohamilr/Maintenance-Tracker.svg?branch=master)](https://travis-ci.org/Mohamilr/Maintenance-Tracker)
+[![Build Status](https://travis-ci.org/Mohamilr/Maintenance-Tracker.svg?branch=develop)](https://travis-ci.org/Mohamilr/Maintenance-Tracker)
 [![Coverage Status](https://coveralls.io/repos/github/Mohamilr/Maintenance-Tracker/badge.svg?branch=master)](https://coveralls.io/github/Mohamilr/Maintenance-Tracker?branch=master)
 
 # Maintenance-Tracker
@@ -20,7 +20,7 @@ Clone this repo and install all dependencies.
 * ```npm run test```
 
 ## Hosted on
-[fix-it-maintenance](http://fix-it-maintenance.herokuapp.com)
+[fix-it-tracker](https://fix-it-tracker.herokuapp.com)
 
 ## License
 This project is licensed under the MIT License 
