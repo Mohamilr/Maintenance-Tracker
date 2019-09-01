@@ -6,9 +6,9 @@ dotenv.config();
 
 const connectToDatabase = {
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER,
     port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE
 };
 
@@ -18,6 +18,7 @@ pool.on('connect', () => {});
 
 //user table
 const createTable = async () => {
+  
     const tableQuery = `CREATE TABLE IF NOT EXISTS 
     users(
         userId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -35,6 +36,7 @@ const createTable = async () => {
 
 //request table
 const createRequestTable = async () => {
+    
     const requestTableQuery = `CREATE TABLE IF NOT EXISTS
     requests(
         requestId SERIAL PRIMARY KEY NOT NULL UNIQUE,
@@ -46,6 +48,7 @@ const createRequestTable = async () => {
         userId INT NOT NULL,
         FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE
     )`;
+
     try{
         await pool.query(requestTableQuery);
         console.log('request table created');

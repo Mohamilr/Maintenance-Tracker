@@ -3,8 +3,8 @@ import chaiHttp from 'chai-http';
 
 import app from '../index';
 
-// import generated token from sign.test.js
-import token from './sign.test';
+// import generated token from sign-up.test.js
+import token2 from './sign-up.test';
 
 chai.use(chaiHttp);
 chai.should();
@@ -14,11 +14,11 @@ describe('GET allRequests for admin', () => {
     it('should return all requests', (done) => {
         chai.request(app)
         .get('/api/v1/requests/')
-        .set('authorization', token)
+        .set('Authorization', `bearer ${token2}`)
         .end((err, res) => {
-          res.should.have.status(401);
-          done(err);
+          res.should.have.status(200);
         })
+        done();
     })
 })
 
@@ -30,11 +30,11 @@ describe('All PUT endpoint', () => {
             const id = 12;
             chai.request(app)
             .put(`/api/v1/requests/${id}/approve`)
-            .set('authorization', token)
+            .set('Authorization', `bearer ${token2}`)
             .end((err, res) => {
-                res.should.have.status(401);
-                done(err);
+                res.should.have.status(200);
             })
+            done();
         })
     })
 
@@ -44,11 +44,11 @@ describe('All PUT endpoint', () => {
             const id = 2;
             chai.request(app)
             .put(`/api/v1/requests/${id}/disapprove`)
-            .set('authorization', token)
+            .set('Authorization', `bearer ${token2}`)
             .end((err, res) => {
-                res.should.have.status(401);
-                done(err);
+                res.should.have.status(200);
             })
+            done();
         })
     })
 
@@ -58,11 +58,11 @@ describe('All PUT endpoint', () => {
             const id = 3;
             chai.request(app)
             .put(`/api/v1/requests/${id}/resolve`)
-            .set('authorization', token)
+            .set('Authorization', `bearer ${token2}`)
             .end((err, res) => {
-                res.should.have.status(401);
-                done(err);
+                res.should.have.status(200);
             })
+            done();
         })
     })
 })

@@ -4,7 +4,7 @@ import chaiHttp from 'chai-http';
 import app from '../index';
 
 // import generated token from sign.test.js
-import token from './sign.test';
+import token from './sign-in.test';
 
 chai.use(chaiHttp);
 chai.should();
@@ -12,27 +12,28 @@ chai.should();
 //test to get all requests 
   describe('GET allRequests', () => {
     it("should get all requests for a loged in user",  (done) => {
+      const id = 79;
       chai.request(app)
-          .get(`/api/v1/users/requests`)
-          .set('authorization', token)
+          .get(`/api/v1/users/requests/${id}/all`) 
+          .set('Authorization', `bearer ${token}`)
           .end ((err, res) => {
-          res.should.have.status(401);
-          done(err);
+          res.should.have.status(200);
         });
+        done();
     });
   });
 
 //test if the requst with id is present
 describe('GET:id getSingleRequest', () => {
     it('should get a single request by id', (done) => {
-      const id = 1;
+      const id = 89;
       chai.request(app)
       .get(`/api/v1/users/requests/${id}`)
-      .set('authorization', token)
+      .set('Authorization', `bearer ${token}`)
       .end((err, res) => {
-        res.should.have.status(401);
-        done(err);
+        res.should.have.status(200);
       })
+      done();
     })
   })
 
@@ -41,38 +42,37 @@ describe('POST addRequest', () => {
   it('should add a request', (done) => {
     chai.request(app)
     .post(`/api/v1/users/requests`)
-    .set('authorization', token)
+    .set('Authorization', `bearer ${token}`)
     .send({
-      id: 4,
-      faultyItem: 'laptop',
-      itemType: 'dell',
+      faulty_item: 'laptop',
+      item_type: 'dell',
       complaint: 'the mother board',
-      userId: 2
+      userId: 79
     })
     .end((err, res) => {
-      res.should.have.status(401);
+      res.should.have.status(201);
       res.body.should.be.a('object');
-      done(err)
     })
+    done();
   })
 })
 
 //test to modify a request
 describe('PUT modifyARequest', () => {
   it('should modify a request', (done) => {
-    const id = 2;
+    const id = 88;
     chai.request(app)
     .put(`/api/v1/users/requests/${id}`)
-    .set('authorization', token)
+    .set('Authorization', `bearer ${token}`)
     .send({
-      faultyItem: 'laptop',
-      itemType: 'dell',
+      faulty_item: 'laptop',
+      item_type: 'dell',
       complaint: 'the mother board',
     })
     .end((err, res) => {
-      res.should.have.status(401);
+      res.should.have.status(200);
       res.body.should.be.a('object');
-      done(err)
     })
+    done();
   })
 })
