@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/Mohamilr/Maintenance-Tracker.svg?branch=develop)](https://travis-ci.org/Mohamilr/Maintenance-Tracker)
 [![Coverage Status](https://coveralls.io/repos/github/Mohamilr/Maintenance-Tracker/badge.svg?branch=develop)](https://coveralls.io/github/Mohamilr/Maintenance-Tracker?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c79460324a16c15b5098/maintainability)](https://codeclimate.com/github/Mohamilr/Maintenance-Tracker/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c79460324a16c15b5098/test_coverage)](https://codeclimate.com/github/Mohamilr/Maintenance-Tracker/test_coverage)
 
 # Maintenance-Tracker
