@@ -13,9 +13,9 @@ import cors from 'cors';
 // path
 import path from 'path';
 
-
 // import swagger ui
 import swaggerUi from 'swagger-ui-express';
+
 
 // request route
 import requestRoutes from './routes/requestRoutes';
@@ -42,22 +42,6 @@ app.use(bodyParser.json({ extended: true }));
 // create port
 const PORT = process.env.PORT || 3000;
 
-
-
-
-// app.use((req, res, next) => {
-
-//   // origin
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-
-//   //  methods 
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-//   //  headers 
-//   res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
-
-//   next();
-// });
 
 // configure path to load html files
 const frontendDir = path.join(__dirname, '../FRONTEND');

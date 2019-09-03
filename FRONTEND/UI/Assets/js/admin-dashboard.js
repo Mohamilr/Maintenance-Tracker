@@ -1,13 +1,17 @@
 const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
+// get token
+const token = localStorage.getItem('token');
+
+if(!token){
+  window.location = '../sign-in.html'
+}
+
 // parent tag (contents) on the admin dashboard page
 const parentTag = document.querySelector('.contents');
 
 // page discription tag
 const header = document.querySelector('.head');
-
-// get token
-const token = localStorage.getItem('token');
 
 
 // gets all requests for admin function
