@@ -102,9 +102,10 @@ const RequestController = {
         if (err) {
           res.sendStatus(401);
         }
+        
         // if a body value is not present
         if (!faulty_item || !item_type || !complaint) {
-          res.status(400).json({
+          return res.status(400).json({
             message: "input all body"
           })
         }

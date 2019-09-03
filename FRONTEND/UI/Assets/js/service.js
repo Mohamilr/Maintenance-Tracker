@@ -1,13 +1,17 @@
 const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
+// get token
+const token = localStorage.getItem('token');
+
+if(!token){
+    window.location = '../sign-in.html'
+}
+
 // username tag (a)
 const username = document.querySelector('.username');
 
 // submit button
 const submitBtn = document.querySelector('.submit');
-
-// get token
-const token = localStorage.getItem('token');
 
 // get username
 const userName = localStorage.getItem('username');

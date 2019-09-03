@@ -1,5 +1,12 @@
 const baseUrl = 'https://fix-it-maintenance.herokuapp.com/api/v1';
 
+// get token
+const token = localStorage.getItem('token');
+
+if(!token){
+  window.location = '../sign-in.html'
+}
+
 // parent tag for undetermined requests on the admin review page
 const parentTag = document.querySelector('.contents');
 
@@ -8,9 +15,6 @@ const approvedParentTag = document.querySelector('.approved-contents');
 
 // page discription tag
 const header = document.querySelector('.head');
-
-// get token
-const token = localStorage.getItem('token');
 
 
 // notification
