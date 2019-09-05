@@ -71,7 +71,13 @@ app.get('/welcome', (req, res) => {
 
 //catch wrong route
 app.use((req, res) => {
-  res.status(404).json({message : 'route not found'})
+  res.status(404).send(
+    `<section style="text-align: center">
+    <h1 style="font-size: 10em">404</h1>
+    <p>You must have visited the wrong link.</p>
+    <p>Please go back to the homepage <a href="../index.html" style="color : #30c252">Fix It</a></p>
+  </section>`
+  )
 })
 
 // start the express server

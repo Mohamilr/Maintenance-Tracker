@@ -369,15 +369,6 @@ button{
     color: blue;
 }
 
-/* 404 page */
-.err-body {
-    text-align: center;
-}
-
-.err-body h1 {
-    font-size: 10em;
-}
-
 /*footer*/
 .footer-container{
     color: #30c252;
