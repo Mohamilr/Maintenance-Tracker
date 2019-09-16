@@ -88,35 +88,34 @@ const RequestController = {
     const { faulty_item, item_type, complaint, userId } = req.body;
     const status = 'Undetermined';
 
-    jwt.verify(req.token, process.env.SECRET_KEY, async (err, dara) => {
-      // if token not provided
-      if (err) {
-        res.sendStatus(401);
-      }
-
-      // if a body value is not present
-      if (!faulty_item || !item_type || !complaint) {
-        return res.status(400).json({
-          message: "input all body"
-        })
-      }
-    })
-
     try {
-
       // query to post a request
       const requestQuery = `INSERT INTO requests (faultyItem, itemType, date, complaint, status, userId)
-       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
+                            VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
       const values = [faulty_item, item_type, new Date(), complaint, status, userId];
       const newRequest = await pool.query(requestQuery, values);
 
+      // protect enpoint response
+      jwt.verify(req.token, process.env.SECRET_KEY, async (err, dara) => {
 
-      // response to the post request
-      res.status(201).json({
-        message: "request added successfully",
-        request: newRequest.rows
+        // if token not provided
+        if (err) {
+          res.sendStatus(401);
+        }
+
+        // if a body value is not present
+        if (!faulty_item || !item_type || !complaint) {
+          return res.status(400).json({
+            message: "input all body"
+          })
+        }
+
+        // response to the post request
+        res.status(201).json({
+          message: "request added successfully",
+          request: newRequest.rows
+        })
       })
-
     }
     catch (err) {
       console.log(err);
