@@ -6,7 +6,7 @@ import pool from '../model/connect.database';
 const RequestController = {
   // all requests for a loged in user
   async allRequest(req, res) {
-    const userId  = parseInt(req.params.id);
+    const userId = parseInt(req.params.id);
 
     try {
       // query to get all requests in the database
@@ -17,7 +17,7 @@ const RequestController = {
 
       // protect endpoint response
       jwt.verify(req.token, process.env.SECRET_KEY, (err, data) => {
-        
+
         // if token not provided
         if (err) {
           res.status(401).json({
@@ -26,10 +26,10 @@ const RequestController = {
         }
 
         //  if the there are no request in the database
-         if (!requests.rows.length) {
-          res.json({ 
+        if (!requests.rows.length) {
+          res.json({
             status: 404,
-            message: 'no request available in the database' 
+            message: 'no request available in the database'
           });
         }
 
@@ -38,7 +38,7 @@ const RequestController = {
           count: requests.rows.length,
           requests: requests.rows
         });
- 
+
       })
     }
     catch (err) {
@@ -49,7 +49,7 @@ const RequestController = {
   async getsingleRequest(req, res) {
     // number to target a request
     const id = parseInt(req.params.id);
-    
+
 
     try {
       // query to get a single request from the database
@@ -66,17 +66,17 @@ const RequestController = {
             message: "token not generated"
           })
         }
-        
-          // an error message if the id is not present
-          if (!request.rows.length) {
-            res.status(404).json({ message: `request with id ${id} is not present in the database` });
-          }
-         
+
+        // an error message if the id is not present
+        if (!request.rows.length) {
+          res.status(404).json({ message: `request with id ${id} is not present in the database` });
+        }
+
         // return single request
         return res.status(200).json({
           request: request.rows[0]
         });
-        
+
       })
     }
     catch (err) {
@@ -91,18 +91,18 @@ const RequestController = {
     try {
       // query to post a request
       const requestQuery = `INSERT INTO requests (faultyItem, itemType, date, complaint, status, userId)
-        VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
+                            VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
       const values = [faulty_item, item_type, new Date(), complaint, status, userId];
       const newRequest = await pool.query(requestQuery, values);
 
       // protect enpoint response
-      jwt.verify(req.token, process.env.SECRET_KEY, (err, dara) => {
+      jwt.verify(req.token, process.env.SECRET_KEY, async (err, dara) => {
 
         // if token not provided
         if (err) {
           res.sendStatus(401);
         }
-        
+
         // if a body value is not present
         if (!faulty_item || !item_type || !complaint) {
           return res.status(400).json({
@@ -140,13 +140,13 @@ const RequestController = {
 
       // the sigle request gotten from the above query
       const selectedRequest = request.rows[0];
-     
+
       // if request has been approved by admin
-     if (selectedRequest.status !== 'Undetermined') {
-      return res.status(403).json({
-        message: 'sorry, you can no longer update this request'
-      })
-    }
+      if (selectedRequest.status !== 'Undetermined') {
+        return res.status(403).json({
+          message: 'sorry, you can no longer update this request'
+        })
+      }
 
       // values from the body
       const faulty_item = req.body.faulty_item || selectedRequest.faultyitem;
@@ -168,7 +168,7 @@ const RequestController = {
           })
           console.log('error')
         }
-        
+
         // if the queried request is not present
         if (!updatedRequest.rows.length) {
           res.status(404).json({

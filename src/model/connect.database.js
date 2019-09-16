@@ -60,7 +60,7 @@ const createRequestTable = async () => {
 
 // drop table
 // const dropTable = async () => {
-//     const query = `DROP TABLE IF EXISTS admin`;
+//     const query = `DROP TABLE IF EXISTS users`;
 //     try{
 //         await pool.query(query);
 //         console.log('user table dropped');
