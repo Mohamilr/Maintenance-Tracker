@@ -79,7 +79,7 @@ describe('GET a single request', () => {
 describe('POST addrequest', () => {
   // give an error
   describe('POST addRequest', () => {
-    it('should add a request', (done) => {
+    it('should give an error', (done) => {
       chai.request(app)
       .post(`/api/v1/users/requests`)
       .set('Authorization', `bearer wrong token`)
@@ -107,7 +107,7 @@ describe('POST addrequest', () => {
         faulty_item: 'laptop',
         item_type: 'dell',
         complaint: 'the mother board',
-        userId: 79
+        userId: 1
       })
       .end((err, res) => {
         res.should.have.status(201);

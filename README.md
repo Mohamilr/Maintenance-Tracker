@@ -6,6 +6,15 @@
 # Maintenance-Tracker
 Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of their request.
 
+### Features
+* Users can create an account and log in.
+* The users can make maintenance or repairs request.
+* An admin can approve/reject a repair/maintenance request.
+* The admin can mark request as resolved once it is done.
+* The admin can view all maintenance/repairs requests on the application
+* The admin can filter requests
+* The user can view all his/her requests
+
 
 ### Prerequisites
 You need to have node.js installed [Node.js](https://nodejs.org/en/)
