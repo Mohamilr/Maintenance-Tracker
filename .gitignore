@@ -1,0 +1,12 @@
+node_modules/
+
+# nyc coverage 
+.nyc_output
+
+coverage/
+
+# environment variables
+.env
+
+#build
+build
